@@ -1,0 +1,6 @@
+![GitHub last commit](https://img.shields.io/github/last-commit/Vitgracer/Vitgracer.github.io?color=blue)
+![GitHub repo size](https://img.shields.io/github/repo-size/Vitgracer/Vitgracer.github.io?color=green)
+![GitHub stars](https://img.shields.io/github/stars/Vitgracer/Vitgracer.github.io?style=social)
+![GitHub forks](https://img.shields.io/github/forks/Vitgracer/Vitgracer.github.io?style=social)
+
+Personal blog about AI, Deep Learning and Computer Vision.
