@@ -1,1 +1,0 @@
-Personal webpage with portfolio, resume, blog
