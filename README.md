@@ -3,4 +3,10 @@
 ![GitHub stars](https://img.shields.io/github/stars/Vitgracer/Vitgracer.github.io?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/Vitgracer/Vitgracer.github.io?style=social)
 
-Personal blog about AI, Deep Learning and Computer Vision.
+## What is it? 
+A personal blog about AI, Deep Learning and Computer Vision.
+
+## Credits
+- This portfolio and blog template is based on [Start Bootstrap - Personal](https://startbootstrap.com/theme/personal).  
+- Images used in this project are sourced from [Pixabay](https://pixabay.com/) and [Unsplash](https://unsplash.com/) under their respective licenses.
+- Icons are sourced from [Boxicons](https://boxicons.com/) under their respective licenses.
