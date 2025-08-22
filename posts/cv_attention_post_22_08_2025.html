@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Resume with education, work experience and skills" />
+        <meta name="author" content="Vitaly" />
+        <title>Neural Paw Attention Post</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100 bg-light">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="../index.html"><span class="fw-bolder text-primary">Neural Paw</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Post Header -->
+            <section class="bg-gradient-primary-to-secondary text-white py-5">
+                <div class="container px-5 text-center">
+                    <h1 class="display-4 fw-bolder">Cross- or Self-?</h1>
+                    <p class="lead fw-light">Of course, we will talk about Attention and explain the difference between 2 paradigms</p>
+                </div>
+            </section>
+
+            <!-- Post Content -->
+            <section class="py-5 bg-light">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-xxl-8 blog-post">
+                            <div class="mb-4">
+                                <img src="../assets/attention.jpg" class="img-fluid rounded-4 mb-4" alt="Eigenvalues illustration">
+                                
+                                <h2 class="fw-bolder">Self-Attention vs Cross-Attention</h2>
+                                <p>In modern <strong>computer vision</strong> and <strong>transformer models</strong>, attention mechanisms are the 🦸 superheroes 🦸 behind understanding context. 
+                                Let's break down the difference between self-attention and cross-attention!</p>
+
+                                <h3>Self-Attention</h3>
+                                <p><strong>Who looks at whom:</strong> all tokens look at each other within the same set.</p>
+                                <p><strong>Input:</strong> a single set of vectors (words, image patches, or video frames).  
+                                The model figures out how elements relate within the same sequence.</p>
+                                <p><em>Example:</em> You have the phrase <strong>"The cat eats fish"</strong>  
+                                Self-attention lets <strong>“eats”</strong> look at <strong>“cat”</strong> and <strong>“fish”</strong> to understand the meaning.</p>
+                                <p><strong>Formula:</strong></p>
+                                <p class="text-center">
+                                    \[
+                                    Q, K, V \gets \text{same set of tokens} 
+                                    \]
+                                    \[
+                                    \text{Attention} = \text{softmax}\Big(\frac{Q K^\top}{\sqrt{d}}\Big) V
+                                    \]
+                                </p>
+
+                                <hr>
+
+                                <h3>Cross-Attention</h3>
+                                <p><strong>Who looks at whom:</strong> tokens from one set (queries) look at tokens from another set (keys/values).</p>
+                                <p><strong>Input:</strong> two different sets of vectors (e.g., text and image).  
+                                This lets the model <em>mix information across modalities</em>.</p>
+                                <p><em>Example:</em> You have the text <strong>"What is the cat doing?"</strong> and an image of a cat eating fish.  
+                                Cross-attention allows text tokens to peek at visual features from the image and understand it better.</p>
+                                <p><strong>Formula:</strong></p>
+                                <p class="text-center">
+                                    \[
+                                    Q \gets \text{tokens from set A (text)}, \quad 
+                                    K, V \gets \text{tokens from set B (image)} 
+                                    \]
+                                    \[
+                                    \text{Attention} = \text{softmax}\Big(\frac{Q K^\top}{\sqrt{d}}\Big) V
+                                    \]
+                                </p>
+
+                                <p>📝 In short: <strong>self-attention</strong> understands relationships <em>within</em> one set, while <strong>cross-attention</strong> merges information <em>between</em> sets.  
+                                These mechanisms are crucial for multimodal AI like CLIP, where text meets images, or video transformers where frames need to “talk” to each other.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Prism.js CSS + JS for code highlighting -->
+        <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />-->
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>-->
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>-->
+
+        <!-- LaTeX rendering -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    </body>
+</html>
