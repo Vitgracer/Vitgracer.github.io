@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Resume with education, work experience and skills" />
+        <meta name="author" content="Vitaly" />
+        <title>Neural Paw Eigenvalues Post</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100 bg-light">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="../index.html"><span class="fw-bolder text-primary">Neural Paw</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Post Header -->
+            <section class="bg-gradient-primary-to-secondary text-white py-5">
+                <div class="container px-5 text-center">
+                    <h1 class="display-4 fw-bolder">Eigen.. what? 🤯</h1>
+                    <p class="lead fw-light">Why Eigenvalues and Eigenvectors are so important for the discipline?</p>
+                </div>
+            </section>
+
+            <!-- Post Content -->
+            <section class="py-5 bg-light">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-xxl-8 blog-post">
+                            <div class="mb-4">
+                                <img src="../assets/eigen.jpg" class="img-fluid rounded-4 mb-4" alt="Eigenvalues illustration">
+
+                                <p>Hey friends! 👋</p>
+                                <p>
+                                    Today we'll talk about <strong>Eigenvalues and Eigenvectors</strong>.  
+                                    Sounds scary? Don't worry — I'm scared too 😂 
+                                    Think of them as the <em>secret sauce</em> behind many AI and Computer Vision tricks.
+                                </p>
+
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">So what's the deal?</h3>
+                                <p>
+                                    A matrix can be thought of as a transformation of space: rotating, stretching, squishing.  
+                                    But some directions are “special” — if you push a vector in those directions,  
+                                    it won't rotate, only stretch or shrink. These are the <strong>eigenvectors</strong>.  
+                                    The amount of stretch/shrink is the <strong>eigenvalue</strong>.  
+                                </p>
+
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">The math definition</h3>
+                                <p>
+                                    We say:
+                                </p>
+
+                                <pre><code class="language-python">A * v = λ * v</code></pre>
+
+                                <p>
+                                    Where:
+                                    <ul>
+                                    <li><strong>A</strong> → our matrix (transformation)</li>
+                                    <li><strong>v</strong> → eigenvector (special direction)</li>
+                                    <li><strong>λ</strong> → eigenvalue (scale factor)</li>
+                                    </ul>
+                                </p>
+
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">Applications</h3>
+                                <ul>
+                                    <li><strong>PCA (Principal Component Analysis)</strong> - Reducing data dimensions while keeping the most important info.</li>
+                                    <li><strong>Face recognition</strong> - Remember the famous <em>Eigenfaces</em>? That's literally eigenvectors of a face dataset. The computer learns the “main directions of variation” in faces and uses them to compare who’s who. 😎</li>
+                                    <li><strong>Graph analysis</strong> - Browsers page rank algorithm uses eigenvectors to figure out which websites are “important”. Yep, the internet itself runs on linear algebra haha 🤭</li>
+                                </ul>
+                                
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">Symmetric Matrices & Why PCA Loves Them</h3>
+                                <p>When working with matrices in data science, a lot of times we deal with <strong>covariance matrices</strong>.
+                                A covariance matrix basically is a square matrix that summarizes how much each pair of variables in your dataset varies together:
+                                </p>
+                                <ul>
+                                <li>If two variables tend to increase or decrease together, their covariance is positive.</li>
+                                <li>If one increases while the other decreases, their covariance is negative.</li>
+                                <li>If they are independent, their covariance is close to zero.</li>
+                                </ul>
+
+                                <p>Covariance matrices are <em>symmetric</em> and defined below:</p>
+                                <pre><code class="language-python">Σ = 1/n * Xᵀ X</code></pre>
+                            
+                                <p>Symmetric matrices have some powers:</p>
+                                <ul>
+                                    <li>✅ All <strong>eigenvalues</strong> are real numbers — complex numbers bye bye 👋</li>
+                                    <li>✅ Eigenvectors are <strong>orthonormal</strong> — perpendicular and of length 1.</li>
+                                </ul>
+
+                                <p>Why is this awesome for PCA?</p>
+                                <ul>
+                                    <li>Eigenvalues literally tell us how much “variance” is captured in each direction.</li>
+                                    <li>Orthonormal eigenvectors give independent axes — perfect for projecting data without mixing dimensions.</li>
+                                </ul>
+                                
+                                <!-- PCA: intuition to steps -->
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">How PCA works</h3>
+                                <ol>
+                                <li>Center the data: subtract the mean from each feature.</li>
+                                <li>Compute the covariance: Σ = (X<sub>c</sub>ᵀ X<sub>c</sub>) / (n−1).</li>
+                                <li>Find eigenvalues and eigenvectors of Σ.</li>
+                                <li>Sort them by descending eigenvalue, keep the top k vectors — these are the <em>principal components</em>.</li>
+                                <li>Project the data: Z = X<sub>c</sub> · W<sub>k</sub>.</li>
+                                <li>Explained variance ratio = λᵢ / (∑ λⱼ).</li>
+                                </ol>
+
+                                <!-- PCA from scratch (NumPy) -->
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">PCA from scratch in Python</h3>
+                                <pre><code class="language-python">import numpy as np
+
+def pca_from_scratch(X, k):
+    """
+    Perform PCA using eigen-decomposition of the covariance matrix.
+    X: 2D array of shape (n_samples, n_features)
+    k: number of principal components to keep
+    Returns: (Z, components, explained_variance_ratio)
+    """
+    X = np.asarray(X, dtype=float)              # ensure float NumPy array
+    n_samples = X.shape[0]                      # number of data points
+    mean = X.mean(axis=0, keepdims=True)        # feature-wise mean
+    Xc = X - mean                               # center the data
+
+    Sigma = (Xc.T @ Xc) / (n_samples - 1)       # covariance matrix
+
+    eigvals, eigvecs = np.linalg.eigh(Sigma)    # eigen-decomposition (stable for symmetric Σ)
+
+    idx = np.argsort(eigvals)[::-1]             # sort eigenvalues in descending order
+    eigvals = eigvals[idx]                      # reorder eigenvalues
+    eigvecs = eigvecs[:, idx]                   # reorder eigenvectors
+
+    W = eigvecs[:, :k]                          # top-k principal directions
+    Z = Xc @ W                                  # project data into low-dim space
+
+    total_var = eigvals.sum()                   # total variance = sum of eigenvalues
+    evr = eigvals[:k] / total_var               # explained variance ratio
+
+    return Z, W, evr
+
+
+# --- Demo with correlated 2D dataset ---
+rng = np.random.default_rng(42)                 # reproducible random generator
+mean = [0.0, 0.0]                               # 2D mean
+cov = np.array([[3.0, 2.0], [2.0, 2.0]])        # covariance (positive semidefinite)
+X_demo = rng.multivariate_normal(mean, cov, size=500)  # sample 500 correlated points
+
+Z, components, evr = pca_from_scratch(X_demo, k=2)
+
+print("Principal components (columns):\n", components)
+print("Explained variance ratio:", evr)
+
+# Reduce to 1D if you only need the strongest direction
+Z1, W1, evr1 = pca_from_scratch(X_demo, k=1)
+print("1D EV ratio:", evr1)
+                                </code></pre>
+
+                                <p style="margin-top:1rem;">
+                                Bottom line: eigenvectors give us the “right coordinate system” where the transformation is just simple scaling.  
+                                PCA turns this into a way of finding directions of maximum variance and compressing data — fast, useful, and super common in computer vision and data science.
+                                </p>
+
+                                <!-- Post Footer -->
+                                <div class="d-flex justify-content-between text-muted">
+                                <span>Published on August 23, 2025</span>
+                                <span>Author: Vitaly</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Prism.js CSS + JS for code highlighting -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+    </body>
+</html>
