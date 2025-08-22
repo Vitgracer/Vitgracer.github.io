@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Resume with education, work experience and skills" />
+        <meta name="author" content="Vitaly" />
+        <title>Neural Paw Distributed Post</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100 bg-light">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="../index.html"><span class="fw-bolder text-primary">Neural Paw</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Post Header -->
+            <section class="bg-gradient-primary-to-secondary text-white py-5">
+                <div class="container px-5 text-center">
+                    <h1 class="display-4 fw-bolder">Linear Regression</h1>
+                    <p class="lead fw-light">A thing that is almost never used in the world of Transformers and Diffusions, but without knowing it you won't get a single offer 😁</p>
+                </div>
+            </section>
+
+            <!-- Post Content -->
+            <section class="py-5 bg-light">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-xxl-8 blog-post">
+                            <div class="mb-4">
+                                <img src="../assets/regression.jpg" class="img-fluid rounded-4 mb-4" alt="Regression illustration">
+                                
+                                <h2 class="fw-bolder">Linear Regression: A Gentle Deep Dive</h2>
+                                <p>Linear regression is one of the simplest yet most important supervised learning algorithms. It allows us to model the relationship between <strong>input features</strong> and a <strong>continuous target variable</strong>.</p>
+
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">What is Linear Regression?</h3>
+                                <p>At its core, linear regression tries to fit a <strong>straight line</strong> (or hyperplane in higher dimensions) to our data points. The general equation is:</p>
+                                <p class="text-center">\( Y \approx X W + b \)</p>
+                                <ul>
+                                    <li><strong>X</strong> — matrix of input features (samples × features)</li>
+                                    <li><strong>W</strong> — vector of weights</li>
+                                    <li><strong>b</strong> — bias or intercept term</li>
+                                </ul>
+                                <p><strong>🎯 The goal:</strong> find \(W\) and \(b\) such that predictions \(\hat{Y}\) are as close as possible to the true \(Y\).</p>
+
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">Loss Function: Mean Squared Error</h3>
+                                <p>We measure how “wrong” our predictions are using the <strong>Mean Squared Error (MSE)</strong>:</p>
+                                <p class="text-center">\( L(W, b) = \frac{1}{m} \sum_{i=1}^{m} (y_i - \hat{y}_i)^2 = \frac{1}{m} \sum_{i=1}^{m} (y_i - (X_i W + b))^2 \)</p>
+                                <p>Where <strong>m</strong> is the number of samples. Minimizing this loss means finding \(W\) and \(b\) that best fit the data.</p>
+
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">How Gradients are Calculated</h3>
+                                <p>To minimize MSE, we use <strong>gradient descent</strong>. The gradients of the loss with respect to \(W\) are:</p>
+
+                                <p class="text-center">
+                                    $$\frac{\partial L}{\partial W} = \frac{\partial}{\partial W} \frac{1}{m} \sum_{i=1}^{m} (y_i - (X_i W + b))^2$$
+                                </p>
+                                <p>Simplify using chain rule:</p>
+                                <p class="text-center">
+                                    $$\frac{\partial L}{\partial W} = \frac{1}{m} \sum_{i=1}^{m} 2 (y_i - (X_i W + b)) \cdot (-X_i)$$
+                                </p>
+                                <p>Factor out the negative sign:</p>
+                                <p class="text-center">
+                                    $$\frac{\partial L}{\partial W} = -\frac{2}{m} \sum_{i=1}^{m} (y_i - (X_i W + b)) X_i$$
+                                </p>
+                                <p>Or equivalently:</p>
+                                <p class="text-center">
+                                    $$\frac{\partial L}{\partial W} = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}_i - y_i) X_i$$
+                                </p>
+
+                                <p>to \(b\):</p>
+                                <p>Partial derivative for bias:</p>
+                                <p class="text-center">
+                                    $$\frac{\partial L}{\partial b} = \frac{\partial}{\partial b} \frac{1}{m} \sum_{i=1}^{m} (y_i - (X_i W + b))^2$$
+                                </p>
+                                <p>Using chain rule:</p>
+                                <p class="text-center">
+                                    $$\frac{\partial L}{\partial b} = \frac{1}{m} \sum_{i=1}^{m} 2 (y_i - (X_i W + b)) \cdot (-1)$$
+                                </p>
+                                <p>Factor out the negative sign and simplify:</p>
+                                <p class="text-center">
+                                    $$\frac{\partial L}{\partial b} = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}_i - y_i)$$
+                                </p>
+                                
+                                <p>🎯 Final gradients: 🎯</p>
+                                <p class="text-center">\( \frac{\partial L}{\partial W} = \frac{1}{m} X^T (\hat{Y} - Y) \)</p>
+                                <p class="text-center">\( \frac{\partial L}{\partial b} = \frac{1}{m} (\hat{Y} - Y) \)</p>
+                                <p>These gradients tell us the direction to update \(W\) and \(b\) to reduce the loss. Conceptually:</p>
+                                <ul>
+                                    <li><strong>dw:</strong> how each feature weight should change</li>
+                                    <li><strong>db:</strong> how the intercept should change</li>
+                                </ul>
+
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">Optimization via Gradient Descent</h3>
+                                <p>We iteratively update parameters:</p>
+                                <p class="text-center">
+                                    \( W := W - \alpha \frac{\partial L}{\partial W} \)<br>
+                                    \( b := b - \alpha \frac{\partial L}{\partial b} \)
+                                </p>
+                                <p>Here, \(\alpha\) is the learning rate — a small step size that controls how fast we move toward the minimum.</p>
+
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">Python Implementation</h3>
+            <pre><code class="language-python">
+import numpy as np
+
+class LinearRegression:
+    def __init__(self, n_dims, lr=0.01):
+        # n_dims - number of features 
+        self.lr = lr
+        self.w = np.random.randn(n_dims, 1)
+        self.b = 0
+
+    def fit(self, X, Y, n_epoch=1000):
+        Y = Y.reshape(-1, 1)  # Y - column
+        for epoch in range(n_epoch):
+            dw, db = self.grad(X, Y)
+            self.w -= self.lr * dw
+            self.b -= self.lr * db
+
+    def predict(self, X):
+        # self.w - column, (n_dim, 1)
+        return np.dot(X, self.w) + self.b
+
+    def grad(self, X, Y):
+        m = X.shape[0]
+        y_hat = self.predict(X)
+        error = y_hat - Y
+        dw = (1/m) * np.dot(X.T, error)
+        db = (1/m) * np.sum(error)
+        return dw, db</code></pre>
+
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">Practical Use Cases</h3>
+                                <p>Linear regression is everywhere:</p>
+                                <ul>
+                                    <li>Predicting house prices based on features like area, rooms, location.</li>
+                                    <li>Forecasting sales, stock prices, or any continuous quantity.</li>
+                                    <li>In machine learning pipelines as a baseline model before moving to complex algorithms.</li>
+                                    <li>Understanding relationships between variables — the coefficients \(W\) show feature importance.</li>
+                                </ul>
+                                <p>Even though it's simple, linear regression is the foundation for many advanced techniques.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Prism.js CSS + JS for code highlighting -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+        <!-- LaTeX rendering -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    </body>
+</html>
