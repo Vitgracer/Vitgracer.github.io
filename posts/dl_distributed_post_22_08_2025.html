@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Resume with education, work experience and skills" />
+        <meta name="author" content="Vitaly" />
+        <title>Neural Paw Distributed Post</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+        <!-- Custom Google font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100 bg-light">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="../index.html"><span class="fw-bolder text-primary">Neural Paw</span></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                            <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- Post Header -->
+            <section class="bg-gradient-primary-to-secondary text-white py-5">
+                <div class="container px-5 text-center">
+                    <h1 class="display-4 fw-bolder">Distributed Training</h1>
+                    <p class="lead fw-light">Explain why 1 GPU is not enough anymore 😭</p>
+                </div>
+            </section>
+
+            <!-- Post Content -->
+            <section class="py-5 bg-light">
+                <div class="container px-5">
+                    <div class="row justify-content-center">
+                        <div class="col-xxl-8 blog-post">
+                            <div class="mb-4">
+                                <img src="../assets/distributed.jpg" class="img-fluid rounded-4 mb-4" alt="Eigenvalues illustration">
+                                
+                                <p>Training huge deep learning models often requires multiple GPUs. Let’s break down how <strong>DataParallel</strong> and <strong>DistributedDataParallel</strong> work, and peek at other parallelism strategies.</p>
+
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">How <strong>DataParallel (DP)</strong> Works</h3>
+                                <ul>
+                                    <li><strong>Single process:</strong> one Python program handles all GPUs at once.</li>
+                                </ul>
+                                <p><strong>Algorithm:</strong></p>
+                                <ol>
+                                    <li>Data is loaded on CPU.</li>
+                                    <li>The process copies the model to each GPU.</li>
+                                    <li>Batch is split into N sub-batches (one per GPU).</li>
+                                    <li>Each GPU computes forward and backward passes.</li>
+                                    <li>Gradients are gathered on GPU0 (main), weights updated, then copied back to all GPUs.</li>
+                                </ol>
+                                <p><strong>🙃 Cons:</strong> GPU0 can become a bottleneck, and extra memory copies between GPUs slow things down.</p>
+
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">How <strong>DistributedDataParallel (DDP)</strong> Works</h3>
+                                <ul>
+                                    <li><strong>Multiple processes:</strong> one per GPU.</li>
+                                    <li>Each process loads its own copy of the model and receives its chunk of data via <code>DistributedSampler</code>.</li>
+                                </ul>
+                                <p><strong>Algorithm:</strong></p>
+                                <ol>
+                                    <li>Processes compute forward and backward passes independently.</li>
+                                    <li>After <code>.backward()</code>, an <strong>all-reduce</strong> averages gradients across GPUs directly via NCCL (no CPU involved).</li>
+                                    <li>Weights are updated locally in each process; they remain identical because gradients are synchronized.</li>
+                                </ol>
+                                <p><strong>💪 Pros:</strong> No GPU0 bottleneck, less communication overhead, better scalability.</p>
+
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">Other Parallelism Strategies</h3>
+                                <p>Besides DP and DDP, modern deep learning frameworks use:</p>
+                                <ul>
+                                    <li><strong>Model Parallelism:</strong> split a model’s layers across different devices. Useful for huge models that don’t fit on a single GPU.</li>
+                                    <li><strong>Tensor Parallelism:</strong> split individual layers’ tensors across multiple GPUs. Often used in large transformer models like GPT or LLaMA.</li>
+                                    <li><strong>Pipeline Parallelism:</strong> split a model into sequential stages and process micro-batches through a pipeline. Helps improve throughput for very deep models.</li>
+                                </ul>
+
+                                <p>In practice, DDP + a mix of tensor or pipeline parallelism is the combo for training large-scale transformers efficiently.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Prism.js CSS + JS for code highlighting -->
+        <!--<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />-->
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>-->
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>-->
+
+        <!-- LaTeX rendering -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    </body>
+</html>
