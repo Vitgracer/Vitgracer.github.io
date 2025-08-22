@@ -70,14 +70,14 @@
                                     We say:
                                 </p>
 
-                                <pre><code class="language-python">A * v = λ * v</code></pre>
+                                \[ A \mathbf{v} = \lambda \mathbf{v} \]
 
                                 <p>
                                     Where:
                                     <ul>
-                                    <li><strong>A</strong> → our matrix (transformation)</li>
-                                    <li><strong>v</strong> → eigenvector (special direction)</li>
-                                    <li><strong>λ</strong> → eigenvalue (scale factor)</li>
+                                    <li>\( \mathbf{A} \) → our matrix (transformation)</li>
+                                    <li>\( \mathbf{v} \) → eigenvector (special direction)</li>
+                                    <li>\( \lambda \) → eigenvalue (scale factor)</li>
                                     </ul>
                                 </p>
 
@@ -99,7 +99,9 @@
                                 </ul>
 
                                 <p>Covariance matrices are <em>symmetric</em> and defined below:</p>
-                                <pre><code class="language-python">Σ = 1/n * Xᵀ X</code></pre>
+                                \[
+                                    \Sigma = \frac{1}{n} X^\top X
+                                \]
                             
                                 <p>Symmetric matrices have some powers:</p>
                                 <ul>
@@ -116,12 +118,24 @@
                                 <!-- PCA: intuition to steps -->
                                 <h3 style="margin-top:2rem;margin-bottom:1rem;">How PCA works</h3>
                                 <ol>
-                                <li>Center the data: subtract the mean from each feature.</li>
-                                <li>Compute the covariance: Σ = (X<sub>c</sub>ᵀ X<sub>c</sub>) / (n−1).</li>
-                                <li>Find eigenvalues and eigenvectors of Σ.</li>
-                                <li>Sort them by descending eigenvalue, keep the top k vectors — these are the <em>principal components</em>.</li>
-                                <li>Project the data: Z = X<sub>c</sub> · W<sub>k</sub>.</li>
-                                <li>Explained variance ratio = λᵢ / (∑ λⱼ).</li>
+                                    <li>Center the data: subtract the mean from each feature.</li>
+                                    <li>Compute the covariance: 
+                                        \[
+                                        \Sigma = \frac{X_c^\top X_c}{n-1}
+                                        \]
+                                    </li>
+                                    <li>Find eigenvalues and eigenvectors of \(\Sigma\).</li>
+                                    <li>Sort them by descending eigenvalue, keep the top \(k\) vectors — these are the <em>principal components</em>.</li>
+                                    <li>Project the data: 
+                                        \[
+                                        Z = X_c \cdot W_k
+                                        \]
+                                    </li>
+                                    <li>Explained variance ratio: 
+                                        \[
+                                        \frac{\lambda_i}{\sum \lambda_j}
+                                        \]
+                                    </li>
                                 </ol>
 
                                 <!-- PCA from scratch (NumPy) -->
@@ -195,6 +209,9 @@ print("1D EV ratio:", evr1)
         <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+        <!-- LaTeX rendering -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     </body>
 </html>
