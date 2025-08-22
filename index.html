@@ -199,13 +199,25 @@
                         <h2 class="display-5 fw-bolder"><span class="text-gradient d-inline">Blog</span></h2>
                         <p class="lead fw-light mb-4">Latest updates for the industry, thoughts & insights </p>
                     </div>
-                    <div class="row g-4">
 
+                     <!-- Filter Buttons -->
+                    <div class="mb-4 text-center">
+                        <button class="btn btn-outline-dark btn-sm filter-btn" data-filter="all">All</button>
+                        <button class="btn btn-outline-dark btn-sm filter-btn" data-filter="cv">Computer Vision</button>
+                        <button class="btn btn-outline-dark btn-sm filter-btn" data-filter="ml">Machine Learning</button>
+                        <button class="btn btn-outline-dark btn-sm filter-btn" data-filter="dl">Deep Learning</button>
+                        <button class="btn btn-outline-dark btn-sm filter-btn" data-filter="math">Mathematics</button>
+                        <button class="btn btn-outline-dark btn-sm filter-btn" data-filter="coding">Coding</button>
+                        <button class="btn btn-outline-dark btn-sm filter-btn" data-filter="other">Other</button>
+                    </div>
+
+                    <div class="row g-4">
                         <!-- Blog Post 1 (Newest) -->
-                        <div class="col-md-6 col-lg-4">
+                        <div class="col-md-6 col-lg-4 blog-card" data-category="other">
                             <div class="card shadow rounded-4 h-100 border-0" style="background: linear-gradient(135deg, #f6d365, #fda085);">
                                 <div class="card-body">
                                     <small class="text-white">21-08-2025</small>
+                                    <span class="badge bg-dark mb-2">Other</span>
                                     <a href="posts/post_21_08_2025.html" class="text-decoration-none text-dark">
                                         <h3 class="fw-bolder mt-2">Welcome!</h3>
                                         <p>Let me tell you what to expect from this personal blog 😊</p>
@@ -215,30 +227,75 @@
                         </div>
 
                         <!-- Blog Post 2 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card shadow rounded-4 h-100 border-0" style="background: linear-gradient(135deg, #a1c4fd, #c2e9fb);">
+                        <div class="col-md-6 col-lg-4 blog-card" data-category="coding">
+                            <div class="card shadow rounded-4 h-100 border-0" style="background: linear-gradient(135deg, #a1c4fd, #4e4cbb);">
                                 <div class="card-body">
-                                    <small class="text-white">TO DO BE DONE SOON...</small>
-                                    <a href="" class="text-decoration-none text-dark">
-                                        <h3 class="fw-bolder mt-2">TO DO BE DONE SOON...</h3>
-                                        <p>TO DO BE DONE SOON...</p>
+                                    <small class="text-white">22-08-2025</small>
+                                    <span class="badge bg-dark mb-2">Coding</span>
+                                    <a href="posts/post_18_08_2025.html" class="text-decoration-none text-dark">
+                                        <h3 class="fw-bolder mt-2">TO DO</h3>
+                                        <p>TO DO</p>
                                     </a>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Blog Post 3 -->
-                        <div class="col-md-6 col-lg-4">
-                            <div class="card shadow rounded-4 h-100 border-0" style="background: linear-gradient(135deg, #fbc2eb, #a6c1ee);">
+                        <div class="col-md-6 col-lg-4 blog-card" data-category="math">
+                            <div class="card shadow rounded-4 h-100 border-0" style="background: linear-gradient(135deg, #5bb924, #c2e9fb);">
                                 <div class="card-body">
-                                    <small class="text-white">TO DO BE DONE SOON...</small>
-                                    <a href="" class="text-decoration-none text-dark">
-                                        <h3 class="fw-bolder mt-2">TO DO BE DONE SOON...</h3>
-                                        <p>TO DO BE DONE SOON...</p>
+                                    <small class="text-white">22-08-2025</small>
+                                    <span class="badge bg-dark mb-2">Mathematics</span>
+                                    <a href="posts/post_18_08_2025.html" class="text-decoration-none text-dark">
+                                        <h3 class="fw-bolder mt-2">TO DO</h3>
+                                        <p>TO DO</p>
                                     </a>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Blog Post 4 -->
+                        <div class="col-md-6 col-lg-4 blog-card" data-category="dl">
+                            <div class="card shadow rounded-4 h-100 border-0" style="background: linear-gradient(135deg, #a1c4fd, #b85998);">
+                                <div class="card-body">
+                                    <small class="text-white">22-08-2025</small>
+                                    <span class="badge bg-dark mb-2">Deep Learning</span>
+                                    <a href="posts/post_18_08_2025.html" class="text-decoration-none text-dark">
+                                        <h3 class="fw-bolder mt-2">TO DO</h3>
+                                        <p>TO DO</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Blog Post 5 -->
+                        <div class="col-md-6 col-lg-4 blog-card" data-category="ml">
+                            <div class="card shadow rounded-4 h-100 border-0" style="background: linear-gradient(135deg, #801616, #c2e9fb);">
+                                <div class="card-body">
+                                    <small class="text-white">22-08-2025</small>
+                                    <span class="badge bg-dark mb-2">Machine Learning</span>
+                                    <a href="posts/post_18_08_2025.html" class="text-decoration-none text-dark">
+                                        <h3 class="fw-bolder mt-2">TO DO</h3>
+                                        <p>TO DO</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Blog Post 6 -->
+                        <div class="col-md-6 col-lg-4 blog-card" data-category="cv">
+                            <div class="card shadow rounded-4 h-100 border-0" style="background: linear-gradient(135deg, #a1c4fd, #2aa72a);">
+                                <div class="card-body">
+                                    <small class="text-white">22-08-2025</small>
+                                    <span class="badge bg-dark mb-2">Computer Vision</span>
+                                    <a href="posts/post_18_08_2025.html" class="text-decoration-none text-dark">
+                                        <h3 class="fw-bolder mt-2">TO DO</h3>
+                                        <p>TO DO</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -249,5 +306,26 @@
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Category filtering-->
+        <script>
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const filter = btn.dataset.filter;
+
+                blogCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+        </script>
+
     </body>
 </html>
