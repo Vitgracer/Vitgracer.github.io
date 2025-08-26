@@ -50,7 +50,7 @@
                             <div class="mb-4">
                                 <img src="../assets/distributed.jpg" class="img-fluid rounded-4 mb-4" alt="Distributed illustration">
                                 
-                                <p>Training huge deep learning models often requires multiple GPUs. Let’s break down how <strong>DataParallel</strong> and <strong>DistributedDataParallel</strong> work, and peek at other parallelism strategies.</p>
+                                <p>Training huge deep learning models often requires multiple GPUs. Let's break down how <strong>DataParallel</strong> and <strong>DistributedDataParallel</strong> work, and peek at other parallelism strategies.</p>
 
                                 <h3 style="margin-top:2rem;margin-bottom:1rem;">How <strong>DataParallel (DP)</strong> Works</h3>
                                 <ul>
@@ -82,8 +82,8 @@
                                 <h3 style="margin-top:2rem;margin-bottom:1rem;">Other Parallelism Strategies</h3>
                                 <p>Besides DP and DDP, modern deep learning frameworks use:</p>
                                 <ul>
-                                    <li><strong>Model Parallelism:</strong> split a model’s layers across different devices. Useful for huge models that don’t fit on a single GPU.</li>
-                                    <li><strong>Tensor Parallelism:</strong> split individual layers’ tensors across multiple GPUs. Often used in large transformer models like GPT or LLaMA.</li>
+                                    <li><strong>Model Parallelism:</strong> split a model's layers across different devices. Useful for huge models that don't fit on a single GPU.</li>
+                                    <li><strong>Tensor Parallelism:</strong> split individual layers' tensors across multiple GPUs. Often used in large transformer models like GPT or LLaMA.</li>
                                     <li><strong>Pipeline Parallelism:</strong> split a model into sequential stages and process micro-batches through a pipeline. Helps improve throughput for very deep models.</li>
                                 </ul>
 
