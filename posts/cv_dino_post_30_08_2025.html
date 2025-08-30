@@ -37,7 +37,7 @@
             <!-- Post Header -->
             <section class="bg-gradient-primary-to-secondary text-white py-5">
                 <div class="container px-5 text-center">
-                    <h1 class="display-4 fw-bolder">🦖 DINOv3: New Era of Computer Vision</h1>
+                    <h1 class="display-4 fw-bolder">🦖 DINOv3: The Dinosaur That Ate All of Computer Vision</h1>
                     <p class="lead fw-light">Time to say bye-bye to ResNet? 👋</p>
                 </div>
             </section>
@@ -49,30 +49,183 @@
                         <div class="col-xxl-8 blog-post">
                             <div class="mb-4">
                                 <img src="../assets/dino_paper.jpg" class="img-fluid rounded-4 mb-4" alt="Dino illustration">
-                                
+
                                 <p>
-                                    Self-supervised learning promises to remove the need for manual labeling, letting models scale to massive datasets and larger architectures. 
-                                    Unlike task-specific training, it can learn visual representations across diverse domains: from natural scenes to aerial images, using a single approach.
+                                <strong>Self-supervised learning</strong> (SSL) has long promised freedom from manual labels.  
+                                Instead of begging humans to annotate cats and dogs, SSL teaches models to <b>learn directly from raw pixels</b>.  
+                                <a href="https://arxiv.org/pdf/2508.10104" target="_blank">DINOv3</a> is the latest big step in this journey and honestly, 
+                                it's kind of a <b>M O N S T E R</b> (in a good way of course).
                                 </p>
+
+                                <h3 style="margin-top:2rem;margin-bottom:1rem;">🤓 Why DINOv3 Matters</h3>
                                 <p>
-                                    <a href="https://arxiv.org/pdf/2508.10104" target="_blank">DINOv3</a> takes a big step toward this goal with a few key strategies. 
-                                </p>
-                                
-                                <p>
-                                <strong>🔴 First</strong>, it scales both the dataset and model size carefully, optimizing data preparation, architecture, and training. 
-                                </p>
-                                <p>
-                                    <strong>🔴 Second</strong>, it introduces <strong>Gram anchoring</strong>, a method that prevents dense feature maps from degrading during long training schedules - a problem that has been hard to solve. 
-                                </p>
-                                <p>
-                                    <strong>🔴 Third</strong>, post-hoc strategies improve flexibility in resolution, model size, and even alignment with text.
+                                Unlike task-specific models, DINOv3 is built as a <b>universal visual encoder</b>.  
+                                It learns rich global features (great for classification) and precise local features (essential for segmentation, depth, tracking).  
+                                That's a rare combo, because previous models usually had to pick one side.
                                 </p>
                                 
-                                <p>
-                                    The result is a versatile vision foundation model that excels across many tasks without fine-tuning. DINOv3 produces high-quality dense features, outperforming previous self- and weakly-supervised models. 
-                                    The DINOv3 suite is designed to scale across different tasks, datasets, and deployment constraints, making it a strong baseline for modern computer vision applications.
+                                <div style="text-align: center;">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1468091730376-d3b5558b71ab?q=80&w=2710&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                        alt="One way unsplash" 
+                                        style="max-width:100%; border-radius:12px;"
+                                    >
+                                    <p style="font-size: 14px; color: gray;">Typical task-specific model.</p>
+                                </div>
+
+                                <div class="highlight">
+                                    
+                                 <p>
+                                    Also, DINOv3 has a <strong>7B PARAMETERS</strong>! And training a such vision model at the <strong>7B parameter scale</strong> is not only about raw compute.
+                                    It surfaces a number of stability and scalability problems that researchers had to carefully solve. 
+                                    Let's break down the key innovations that made DINOv3 possible.
                                 </p>
                                 
+                                <h5 style="margin-top:2rem;margin-bottom:1rem;">🧲 Gram Anchoring: Stabilizing Patch-Level Features</h5>
+                                <p>
+                                    <b>🚨 Problem:</b> During long training runs, Vision Transformers tend to lose 
+                                    <em>patch-level consistency</em>. It means that the same object may be represented very differently 
+                                    depending on context or training iteration. This degrades dense prediction tasks like 
+                                    segmentation or tracking.  
+                                    <br><br>
+                                    <b>✅ Solution:</b> DINOv3 introduces <strong>Gram Anchoring</strong>, where patch correlations are explicitly 
+                                    encouraged to remain stable. The model periodically matches its patch-level feature correlation 
+                                    patterns to a stronger “teacher” model. This acts like a magnetic field keeping features aligned, 
+                                    resulting in <em>robust and coherent representations</em> even after millions of training steps.
+                                </p>
+                                
+                                <h5 style="margin-top:2rem;margin-bottom:1rem;">🌍 Massive Data Curation</h5>
+                                <p>
+                                    <b>🚨 Problem:</b> Scaling models blindly on raw web data can lead to noisy, unbalanced datasets that harm 
+                                    generalization. A model of this size needs <em>diverse but clean</em> input to avoid memorization 
+                                    and overfitting.  
+                                    <br><br>
+                                    <b>✅ Solution:</b> The DINOv3 team curated a dataset of <strong>1.6 billion+</strong> images, carefully 
+                                    filtered to remove low-quality samples and ensure diversity. This massive yet controlled dataset 
+                                    provides the foundation for the model's broad generalization across domains and tasks.
+                                </p>
+                                
+                                <h5 style="margin-top:2rem;margin-bottom:1rem;">📏 A Scalable Family of Models</h5>
+                                <p>
+                                    <b>🚨 Problem:</b> While a 7B parameter model is great for research, it’s impractical for most real-world 
+                                    deployments due to cost and latency.  
+                                    <br><br>
+                                    <b>✅ Solution:</b> The team distilled the giant model into a whole <strong>family of ViTs</strong>, 
+                                    ranging from small (ViT-S, ~21M params) to large (ViT-H+, ~0.8B params). These distilled versions 
+                                    inherit most of the power of the 7B model but are efficient enough for everyday use cases.  
+                                    This makes DINOv3 both a research breakthrough and a practical tool.
+                                </p>
+                                
+                                <h5 style="margin-top:2rem;margin-bottom:1rem;">🛠 Post-Training Tricks</h5>
+                                <p>
+                                    <b>🚨 Problem:</b> Even after training, models may fail to adapt to higher resolutions, lack zero-shot text 
+                                    understanding, or be too rigid for transfer.  
+                                    <br><br>
+                                    <b>✅ Solution:</b> DINOv3 employs several clever <strong>post-training strategies</strong>:
+                                </p>
+                                <ul>
+                                    <li><strong>Resolution Scaling</strong>: adapts the model to work with high-res inputs (512px, 768px, and even 4K).</li>
+                                    <li><strong>Distillation</strong>: compresses knowledge from the huge teacher into smaller, faster students.</li>
+                                    <li><strong>Text Alignment</strong>: adds a contrastive training phase that links image features with captions, 
+                                    enabling <em>zero-shot multimodal capabilities</em> similar to CLIP but with stronger dense representations.</li>
+                                </ul>
+                                
+                                <p>
+                                    Together, these innovations solve the fundamental problems of instability, noisy data, 
+                                    impractical scale, and limited adaptability. 
+                                </p>
+                                <p>
+                                    🏁<b>The result:</b> a vision foundation model that is not 
+                                    only <em>state-of-the-art</em> in research benchmarks but also practical and versatile for real-world 
+                                    computer vision applications.
+                                </p>
+
+                                
+                                <h2 style="margin-top:2rem;margin-bottom:1rem;">📊 Benchmarks</h2>
+                                <p>
+                                The frozen 7B model already crushes benchmarks.  
+                                Add tiny task-specific heads and suddenly you've got <b>state-of-the-art object detection, segmentation, depth estimation</b>, and even 3D view understanding.  
+                                All from the same backbone.  
+                                </p>
+
+                                <h2 style="margin-top:2rem;margin-bottom:1rem;">🎥 The Fun Part: Object Tracking Demo</h2>
+                                <p>
+                                Alright, enough theory. Here's the cool part: I want to show you how to simply use DINOv3 for <b>video object tracking</b> with just a mouse click.
+                                </p>
+
+                                <div style="text-align: center; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                                    <div>
+                                        <img 
+                                            src="https://raw.githubusercontent.com/Vitgracer/DinoV3-Object-Tracking/refs/heads/main/results/cat.gif" 
+                                            alt="Cat GIF" 
+                                            style="max-width:250px; border-radius:12px;"
+                                        >
+                                        <p style="font-size: 14px; color: gray;">Cat tracking example</p>
+                                    </div>
+
+                                    <div>
+                                        <img 
+                                            src="https://raw.githubusercontent.com/Vitgracer/DinoV3-Object-Tracking/refs/heads/main/results/dog.gif" 
+                                            alt="Dog GIF" 
+                                            style="max-width:250px; border-radius:12px;"
+                                        >
+                                        <p style="font-size: 14px; color: gray;">Dog tracking example</p>
+                                    </div>
+
+                                    <div>
+                                        <img 
+                                            src="https://raw.githubusercontent.com/Vitgracer/DinoV3-Object-Tracking/refs/heads/main/results/butterfly.gif" 
+                                            alt="Butterfly GIF" 
+                                            style="max-width:250px; border-radius:12px;"
+                                        >
+                                        <p style="font-size: 14px; color: gray;">Butterfly tracking example</p>
+                                    </div>
+
+                                </div>
+                                
+                                <p>What is this thing is doing:</p>
+
+                                <ol>
+                                <li>Take the first frame of your video.</li>
+                                <li>Click the object you want to track.</li>
+                                <li>DINOv3 splits the frame into patches and encodes each into a feature vector.</li>
+                                <li>Compare the selected patch with patches in future frames using cosine similarity.</li>
+                                <li>Boom 💥- you get a similarity heatmap (more orange = more likely your object).</li>
+                                </ol>
+                                
+                                <div style="text-align: center;">
+                                    <img 
+                                        src="https://raw.githubusercontent.com/Vitgracer/DinoV3-Object-Tracking/refs/heads/main/resources/how_it_works.png"
+                                        alt="How it works" 
+                                        style="max-width:100%; border-radius:12px;"
+                                    >
+                                    <p style="font-size: 14px; color: gray;">Basic demo example.</p>
+                                </div>
+                                
+
+                                <p>
+                                This works because DINOv3's patch-level features are <b>dense, consistent, and spatially precise</b>.  
+                                No fine-tuning. No magic tricks. Just pure SSL power in action.  
+                                </p>
+                                <p>
+                                Era of ResNet is over, <b>Press F</b> 🫡
+                                </p>
+
+                                <p>
+                                🔗 Here is the repo: <a href="https://github.com/Vitgracer/DinoV3-Object-Tracking" target="_blank">Object Tracking GitHub</a>
+                                </p>
+
+                                <h2 style="margin-top:2rem;margin-bottom:1rem;">The Final Words</h2>
+                                <p>
+                                DINOv3 is more than just a research flex.  
+                                It shows that with talent of researchers and involved scientists SSL can beat supervised methods while staying general-purpose.  
+                                From dense tasks to global embeddings, from 7B giants to edge-friendly distilled models, it sets a new bar for foundation vision models.
+                                </p>
+
+                                <p>
+                                👉 Big thanks to the authors of  <a href="https://arxiv.org/pdf/2508.10104" target="_blank">DINOv3</a> for this masterpiece!   
+                                They proved that dinosaurs aren't extinct. They're running your vision models now. 🦖
+                                </p>
 
                             <!-- Post Footer -->
                             <div class="d-flex justify-content-between text-muted">
