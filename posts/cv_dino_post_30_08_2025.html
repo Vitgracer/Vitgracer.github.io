@@ -51,17 +51,17 @@
                                 <img src="../assets/dino_paper.jpg" class="img-fluid rounded-4 mb-4" alt="Dino illustration">
 
                                 <p>
-                                <strong>Self-supervised learning</strong> (SSL) has long promised freedom from manual labels.  
-                                Instead of begging humans to annotate cats and dogs, SSL teaches models to <b>learn directly from raw pixels</b>.  
-                                <a href="https://arxiv.org/pdf/2508.10104" target="_blank">DINOv3</a> is the latest big step in this journey and honestly, 
-                                it's kind of a <b>M O N S T E R</b> (in a good way of course).
+                                    <strong>Self-supervised learning</strong> (SSL) has long promised freedom from manual labels.  
+                                    Instead of begging humans to annotate cats and dogs, SSL teaches models to <b>learn directly from raw pixels</b>.  
+                                    <a href="https://arxiv.org/pdf/2508.10104" target="_blank">DINOv3</a> is the latest big step in this journey and honestly, 
+                                    it's kind of a <b>M O N S T E R</b> (in a good way of course).
                                 </p>
 
                                 <h3 style="margin-top:2rem;margin-bottom:1rem;">🤓 Why DINOv3 Matters</h3>
                                 <p>
-                                Unlike task-specific models, DINOv3 is built as a <b>universal visual encoder</b>.  
-                                It learns rich global features (great for classification) and precise local features (essential for segmentation, depth, tracking).  
-                                That's a rare combo, because previous models usually had to pick one side.
+                                    Unlike task-specific models, DINOv3 is built as a <b>universal visual encoder</b>.  
+                                    It learns rich global features (great for classification) and precise local features (essential for segmentation, depth, tracking).  
+                                    That's a rare combo, because previous models usually had to pick one side.
                                 </p>
                                 
                                 <div style="text-align: center;">
@@ -72,11 +72,9 @@
                                     >
                                     <p style="font-size: 14px; color: gray;">Typical task-specific model.</p>
                                 </div>
-
-                                <div class="highlight">
                                     
-                                 <p>
-                                    Also, DINOv3 has a <strong>7B PARAMETERS</strong>! And training a such vision model at the <strong>7B parameter scale</strong> is not only about raw compute.
+                                <p>
+                                    DINOv3 has a <strong>7B PARAMETERS!</strong> And training a such vision model at the <strong>7B parameter scale</strong> is not only about raw compute.
                                     It surfaces a number of stability and scalability problems that researchers had to carefully solve. 
                                     Let's break down the key innovations that made DINOv3 possible.
                                 </p>
@@ -90,9 +88,20 @@
                                     <br><br>
                                     <b>✅ Solution:</b> DINOv3 introduces <strong>Gram Anchoring</strong>, where patch correlations are explicitly 
                                     encouraged to remain stable. The model periodically matches its patch-level feature correlation 
-                                    patterns to a stronger “teacher” model. This acts like a magnetic field keeping features aligned, 
+                                    patterns to a stronger “teacher” model. It helps keeping features aligned, 
                                     resulting in <em>robust and coherent representations</em> even after millions of training steps.
                                 </p>
+
+                                <div style="text-align: center;">
+                                    <img 
+                                        src="../assets/dino_noise_examplepng.png"
+                                        alt="Noise" 
+                                        style="max-width:100%; border-radius:12px;"
+                                    >
+                                    <p style="font-size: 14px; color: gray;">Change in cosine similarity between the red-marked patch and all other patches over training. 
+                                        As training continues, the model's features lose spatial localization, causing the similarity maps to become increasingly noisy.
+                                    </p>
+                                </div>
                                 
                                 <h5 style="margin-top:2rem;margin-bottom:1rem;">🌍 Massive Data Curation</h5>
                                 <p>
@@ -107,7 +116,7 @@
                                 
                                 <h5 style="margin-top:2rem;margin-bottom:1rem;">📏 A Scalable Family of Models</h5>
                                 <p>
-                                    <b>🚨 Problem:</b> While a 7B parameter model is great for research, it’s impractical for most real-world 
+                                    <b>🚨 Problem:</b> While a 7B parameter model is great for research, it's impractical for most real-world 
                                     deployments due to cost and latency.  
                                     <br><br>
                                     <b>✅ Solution:</b> The team distilled the giant model into a whole <strong>family of ViTs</strong>, 
