@@ -79,17 +79,27 @@
                                     Let's break down the key innovations that made DINOv3 possible.
                                 </p>
                                 
-                                <h5 style="margin-top:2rem;margin-bottom:1rem;">🧲 Gram Anchoring: Stabilizing Patch-Level Features</h5>
+                                <h5 style="margin-top:2rem;margin-bottom:1rem;">🧲 Gram Anchoring: Saving Dense Features!</h5>
                                 <p>
-                                    <b>🚨 Problem:</b> During long training runs, Vision Transformers tend to lose 
-                                    <em>patch-level consistency</em>. It means that the same object may be represented very differently 
-                                    depending on context or training iteration. This degrades dense prediction tasks like 
-                                    segmentation or tracking.  
-                                    <br><br>
-                                    <b>✅ Solution:</b> DINOv3 introduces <strong>Gram Anchoring</strong>, where patch correlations are explicitly 
-                                    encouraged to remain stable. The model periodically matches its patch-level feature correlation 
-                                    patterns to a stronger “teacher” model. It helps keeping features aligned, 
-                                    resulting in <em>robust and coherent representations</em> even after millions of training steps.
+                                    <b>🚨 Problem:</b> When training the huge 7B DINOv3 model for a long time, global metrics (like classification) keep improving as expected. 
+                                          But dense prediction tasks, like segmentation, start degrading after ~200k iterations. 
+                                          Why? 🤔 Patch-level features begin to “blur” - the model loses local detail, and similarity maps become noisy and less reliable.
+                                </p>
+                                <p>
+                                    <b>✅ Solution:</b> The idea is simple but clever: instead of forcing the patch features to stay in place directly, we preserve <strong>their relationships</strong>. 
+                                          We do this using the <strong>Gram matrix</strong> - a matrix of all pairwise dot products of patch features in an image.</p>
+
+                                    <p>We take a <strong>Gram teacher</strong> - an early snapshot of the model with high-quality dense features - and push the student model to match its Gram matrix:</p>
+
+                                    \[
+                                    L_{\text{Gram}} = \left\| X_S X_S^\top - X_G X_G^\top \right\|_F^2
+                                    \]
+
+                                    <ul>
+                                        <li><strong>X<sub>S</sub></strong> — L2-normalized patch features of the student</li>
+                                        <li><strong>X<sub>G</sub></strong> — L2-normalized patch features of the Gram teacher</li>
+                                    </ul>
+                                    <p>This way, the features themselves are free to move, but the <em>structure of patch similarities remains intact</em>. 
                                 </p>
 
                                 <div style="text-align: center;">
@@ -255,7 +265,7 @@
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script> -->
 
         <!-- LaTeX rendering -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     </body>
 </html>
