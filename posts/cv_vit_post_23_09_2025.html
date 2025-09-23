@@ -97,6 +97,16 @@ class PatchEmbedder(nn.Module):
                                     resulting in <code>(batch_size, num_patches, hidden_dim)</code>. 
                                     For a 28x28 MNIST image with a 4x4 patch size, you get (28/4) * (28/4) = 7 * 7 = <b>49 patches</b>!</li>
                             </ul>
+
+                            <div style="text-align: center;">
+                                <img 
+                                    src="../assets/vit_patch_embeddings.png"
+                                    alt="Patch embeddings viz" 
+                                    style="max-width:100%; border-radius:12px;"
+                                >
+                                <p style="font-size: 14px; color: gray;">Patch embeddings vizualization.</p>
+                            </div>
+
                             <p>So, we've taken an image and turned it into a sequence of feature vectors, each representing a patch. </p>
                             <p>THE SHOW STARTS HERE! 🚩</p>
                             
@@ -318,7 +328,7 @@ class SimpleViT(nn.Module):
                                 on many image recognition tasks, often with fewer inductive biases than traditional CNNs.</p>
                             <p>While CNNs have their strengths, ViT's ability to capture long-range dependencies across an image (thanks to self-attention) 
                                 makes it incredibly powerful. It's a testament to the power of generalization in AI research, proving that architectures designed 
-                                for one domain can find huge success in another!</p>
+                                forhttps://excalidraw.com/ one domain can find huge success in another!</p>
                             <p>Want to dive deeper and see this implementation in action? </p>
                             <p>🔗 Check out the full repository here: <a href="https://github.com/Vitgracer/ViT-from-scratch" target="_blank">ViT from Scratch</a>.</p>
 
