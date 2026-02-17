@@ -499,6 +499,22 @@ pre[class*="language-"]::before {
   text-align: center;
   margin: 2rem 0;
   border: 1px solid rgba(30, 48, 243, 0.1);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* MathJax output: visible and scrollable on mobile */
+.blog-post .text-center,
+.blog-post p.text-center {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* MathJax 3 CHTML container - don't clip, allow horizontal scroll */
+mjx-container {
+  max-width: 100%;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Responsive Enhancements */
@@ -514,6 +530,20 @@ pre[class*="language-"]::before {
   .blog-post p {
     font-size: 1rem;
   }
+  
+  /* Формулы на мобильных: не обрезать, дать прокрутку */
+  .equation,
+  .blog-post .text-center {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+/* Секции с контентом поста не обрезают широкие формулы */
+section:has(.blog-post) {
+  overflow: visible;
 }
 
 /* Loading Animation for Images */
