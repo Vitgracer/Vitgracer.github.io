@@ -1,87 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Top 3 Array Tasks" />
-        <meta name="author" content="Vitaly" />
-        <title>Top 3 Arrays Post</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
-        <!-- Custom Google font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../css/styles.css" rel="stylesheet" />
-    </head>
-    <body class="d-flex flex-column h-100 bg-light">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="../index.html"><span class="fw-bolder text-primary">Neural Paw</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="../index.html">Blog</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
-                        </ul>
-                    </div>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Top 3 Array Tasks" />
+    <meta name="author" content="Vitaly" />
+    <title>Top 3 Arrays Post</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="../css/post.css" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg glass-nav py-3 sticky-top">
+            <div class="container px-5">
+                <a class="navbar-brand" href="../index.html"><span class="fw-bolder text-gradient">Neural Paw</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    </ul>
                 </div>
-            </nav>
-            
-            <!-- Post Header -->
-            <section class="bg-gradient-primary-to-secondary text-white py-5">
-                <div class="container px-5 text-center">
-                    <h1 class="display-4 fw-bolder">🔡 Top 3 Array Challenges for Interviews</h1>
-                    <p class="lead fw-light">Oh no… back to Bubble Sort? 🫧</p>
-                </div>
-            </section>
+            </div>
+        </nav>
 
-            <!-- Post Content -->
-            <section class="py-5 bg-light blog-post">
-                <div class="container px-5">
-                    <div class="row justify-content-center">
-                        <div class="col-xxl-8">
-                            <div class="mb-4">
-                                <img src="../assets/top3_arrays.jpg" class="img-fluid rounded-4 mb-4" alt="Top 3 Arrays Illustration">
-                                    
-                                <div>
-                                    <p>Hey friends! 👋</p>
-                                    <p>Whenever I talk to people preparing for coding interviews, I hear the same thing: <p> 
-                                        <p style="text-align: center;"><em>Arrays? Nobody asks those anymore!</em></p>
-                                    <p>
-                                        And yet… arrays keep coming back, again and again. They're simple enough to explain under pressure, 
-                                        but tricky enough to filter candidates when the interviewer adds a <b>😡little twist😡</b>... MU HA HA
-                                    </p>
+        <!-- Post Header -->
+        <header class="post-header">
+            <div class="container px-5 text-center">
+                <h1 class="display-3 fw-bolder mb-3">🔡 Top 3 Array Challenges for Interviews</h1>
+                <p class="lead fw-light text-muted">Oh no… back to Bubble Sort? 🫧</p>
+            </div>
+        </header>
 
-                                    <p>Today I'm not going to cover standard techniques like binary search or sorting. 
-                                        Instead, I'll focus on three tasks where the <strong>elegant trick</strong> is what makes or breaks the solution.</p>
+        <!-- Post Content -->
+        <section class="pb-5">
+            <div class="container px-5">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-10 post-container blog-post">
+                        <div class="mb-4">
+                            <img src="../assets/top3_arrays.jpg" class="img-fluid rounded-4 mb-4"
+                                alt="Top 3 Arrays Illustration">
 
-                                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">🔹 Problem 1: The Missing Numbers</h3>
-                                    <p>You're given an array of length <code>n</code> where each element is supposed to be a number between 
-                                        <code>1</code> and <code>n</code>. But of course, some numbers go missing, and some appear twice. </p>
-                                    <p><b>Your job:</b> return all the numbers in <code>[1..n]</code> that don't show up in the array.</p>
-                                    <p><b>Example:</b></p>
-                                    <pre><code class="language-python">
+                            <div>
+                                <p>Hey friends! 👋</p>
+                                <p>Whenever I talk to people preparing for coding interviews, I hear the same thing:
+                                <p>
+                                <p style="text-align: center;"><em>Arrays? Nobody asks those anymore!</em></p>
+                                <p>
+                                    And yet… arrays keep coming back, again and again. They're simple enough to explain
+                                    under pressure,
+                                    but tricky enough to filter candidates when the interviewer adds a <b>😡little
+                                        twist😡</b>... MU HA HA
+                                </p>
+
+                                <p>Today I'm not going to cover standard techniques like binary search or sorting.
+                                    Instead, I'll focus on three tasks where the <strong>elegant trick</strong> is what
+                                    makes or breaks the solution.</p>
+
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">🔹 Problem 1: The Missing Numbers
+                                </h3>
+                                <p>You're given an array of length <code>n</code> where each element is supposed to be a
+                                    number between
+                                    <code>1</code> and <code>n</code>. But of course, some numbers go missing, and some
+                                    appear twice.
+                                </p>
+                                <p><b>Your job:</b> return all the numbers in <code>[1..n]</code> that don't show up in
+                                    the array.</p>
+                                <p><b>Example:</b></p>
+                                <pre><code class="language-python">
 Input:  [4,5,6,7,8,6,5,1]
 Output: [2,3]
                                     </code></pre>
-                                    <p> Super-easy, right? We just need to create an array from <code>1</code> to <code>n</code>, make a set, and find the difference:</p>
-                                    <pre><code class="language-python">
+                                <p> Super-easy, right? We just need to create an array from <code>1</code> to
+                                    <code>n</code>, make a set, and find the difference:
+                                </p>
+                                <pre><code class="language-python">
 def findMissingNumbers(nums):
     return list(set(range(1, len(nums) + 1)) - set(nums))
                                     </code></pre>
-                                    
-                                    <p>But here we are creating a new array, which makes our memory complexity <code>O(n)</code>. 
-                                        The main challenge here is to do it without additional memory. Are you ready for the solution? 😬</p>
-                                    
-                                    <p><b>👉 Solution:</b></p>
-                                    <pre><code class="language-python">
+
+                                <p>But here we are creating a new array, which makes our memory complexity
+                                    <code>O(n)</code>.
+                                    The main challenge here is to do it without additional memory. Are you ready for the
+                                    solution? 😬
+                                </p>
+
+                                <p><b>👉 Solution:</b></p>
+                                <pre><code class="language-python">
 def findMissingNumbers(nums):
     for num in nums:
         index = abs(num) - 1
@@ -91,30 +113,33 @@ def findMissingNumbers(nums):
 
     return [i + 1 for i in range(len(nums)) if nums[i] > 0]
                                     </code></pre>
-                                    <p>Why is this problem beautiful? Because the optimal way is not to use a set or extra memory, 
-                                        but to work directly <em>inside the array itself</em>. </p>
-                                    <p>The key trick is to use the values as “markers” for which indices you've already seen. 
-                                        Once you realize you can mutate the array keeping its structure, the whole problem collapses into a clean <code>O(n)</code> in-place algorithm!</p>
-                                    
-                                    <div style="text-align: center;">
-                                        <img 
-                                            src="../assets/love_in_place.png"
-                                            alt="Love in place meme" 
-                                            style="max-width:100%; border-radius:12px;"
-                                        >
-                                    </div>
+                                <p>Why is this problem beautiful? Because the optimal way is not to use a set or extra
+                                    memory,
+                                    but to work directly <em>inside the array itself</em>. </p>
+                                <p>The key trick is to use the values as “markers” for which indices you've already
+                                    seen.
+                                    Once you realize you can mutate the array keeping its structure, the whole problem
+                                    collapses into a clean <code>O(n)</code> in-place algorithm!</p>
 
-                                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">🔹 Problem 2: Array Rotation</h3>
-                                    <p>You're given an array and a number <code>k</code>. Shift the array to the right by <code>k</code> positions.</p> 
-                                    <p>Vitaly, <em>"eaaaaaaaaaaaaaaaaaaasy"</em>, right?</p>
-                                    <p><b>Example:</b></p>
-                                    <pre><code class="language-python">
+                                <div style="text-align: center;">
+                                    <img src="../assets/love_in_place.png" alt="Love in place meme"
+                                        style="max-width:100%; border-radius:12px;">
+                                </div>
+
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">🔹 Problem 2: Array Rotation</h3>
+                                <p>You're given an array and a number <code>k</code>. Shift the array to the right by
+                                    <code>k</code> positions.
+                                </p>
+                                <p>Vitaly, <em>"eaaaaaaaaaaaaaaaaaaasy"</em>, right?</p>
+                                <p><b>Example:</b></p>
+                                <pre><code class="language-python">
 Input:  nums = [1,2,3,4,5,6,7,8], k = 4
 Output: [5,6,7,8,1,2,3,4]
                                     </code></pre>
-                                    <p>But can you write your solution in <b>linear</b> time? That's the main challenge here!</p>
-                                    <p><b>👉 Solution:</b></p>
-                                    <pre><code class="language-python">
+                                <p>But can you write your solution in <b>linear</b> time? That's the main challenge
+                                    here!</p>
+                                <p><b>👉 Solution:</b></p>
+                                <pre><code class="language-python">
 def shift(nums, k):
     real_rotation = k % len(nums)
 
@@ -129,22 +154,27 @@ def shift(nums, k):
     reverse(nums, real_rotation, len(nums) - 1)
                                     </code></pre>
 
-                                    <p>What makes this fun is that the naive approach (shifting one step at a time) is quadratic. We definitely don't have so much time 😂</p>
-                                    <p>But there's a wonderfully elegant linear-time solution, which involves carefully reversing parts of the array.</p>
-                                    <p>LOVE PROGRAMMING! <s>No</s> 😂</p>
-                                        
+                                <p>What makes this fun is that the naive approach (shifting one step at a time) is
+                                    quadratic. We definitely don't have so much time 😂</p>
+                                <p>But there's a wonderfully elegant linear-time solution, which involves carefully
+                                    reversing parts of the array.</p>
+                                <p>LOVE PROGRAMMING! <s>No</s> 😂</p>
 
-                                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">🔹 Problem 3: Moving the Zeroes</h3>
-                                    <p>Okay, I promised not to cover "basic two-pointer" problems… but this one is too much of a classic to ignore.</p>
-                                    <p><b>The task:</b> given an array, push all zeroes to the end while keeping the order of the other numbers.</p>
-                                    <p>And of course... IN-PLACE!!! Using additional memory could decrease your offer by up to 40% 😂</p>
-                                    <p><b>Example:</b></p>
-                                    <pre><code class="language-python">
+
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">🔹 Problem 3: Moving the Zeroes</h3>
+                                <p>Okay, I promised not to cover "basic two-pointer" problems… but this one is too much
+                                    of a classic to ignore.</p>
+                                <p><b>The task:</b> given an array, push all zeroes to the end while keeping the order
+                                    of the other numbers.</p>
+                                <p>And of course... IN-PLACE!!! Using additional memory could decrease your offer by up
+                                    to 40% 😂</p>
+                                <p><b>Example:</b></p>
+                                <pre><code class="language-python">
 Input:  [0,1,0,2,3]
 Output: [1,2,3,0,0]
                                     </code></pre>
-                                    <p><b>👉 Solution:</b></p>
-                                    <pre><code class="language-python">
+                                <p><b>👉 Solution:</b></p>
+                                <pre><code class="language-python">
 def shiftZeroes(nums):
         zero_index = -1
 
@@ -168,38 +198,48 @@ def shiftZeroes(nums):
         
         return nums
                                     </code></pre>
-                                    <p>Yes, it's a two-pointer pattern, and yes, it's textbook. 
-                                        Buuuut... DON'T KNOW WHY, I've met this task more often than any other and 
-                                        I think I can resolve it with my eyes closed 😌</p>
-                                    <p>It tests whether you can apply a standard technique under pressure. 
-                                        And if you write it cleanly without additional memory and in <code>O(n)</code>, you'll earn some instant respect 🤪</p>
+                                <p>Yes, it's a two-pointer pattern, and yes, it's textbook.
+                                    Buuuut... DON'T KNOW WHY, I've met this task more often than any other and
+                                    I think I can resolve it with my eyes closed 😌</p>
+                                <p>It tests whether you can apply a standard technique under pressure.
+                                    And if you write it cleanly without additional memory and in <code>O(n)</code>,
+                                    you'll earn some instant respect 🤪</p>
 
-                                    <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Conclusion</h3>
-                                    <p>Arrays may seem like the most elementary data structure, but interviewers know how to make them interesting. 
-                                        The trick is not always about which algorithm you know - 
-                                        it's about whether you can spot the hidden move that makes the solution optimal.</p>
-                                </div>
-
-
-                                <!-- Post Footer -->
-                                <div class="d-flex justify-content-between text-muted">
-                                    <span>Published on September 5, 2025</span>
-                                    <span>Author: Vitaly</span>
-                                </div>
-
+                                <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Conclusion</h3>
+                                <p>Arrays may seem like the most elementary data structure, but interviewers know how to
+                                    make them interesting.
+                                    The trick is not always about which algorithm you know -
+                                    it's about whether you can spot the hidden move that makes the solution optimal.</p>
                             </div>
+
+
+                            <!-- Post Footer -->
+                            <div class="d-flex justify-content-between text-muted">
+                                <span>Published on September 5, 2025</span>
+                                <span>Author: Vitaly</span>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <!-- Prism.js CSS + JS for code highlighting -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+            </div>
+        </section>
+    </main>
 
-    </body>
+    <!-- Footer -->
+    <footer class="mt-auto py-4 text-center bg-white border-top">
+        <div class="container px-5">
+            <div class="small text-muted">Copyright &copy; Vitalii • Neural Paw 2026</div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Prism.js CSS + JS for code highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+</body>
+
 </html>

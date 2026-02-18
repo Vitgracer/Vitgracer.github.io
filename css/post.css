@@ -1,0 +1,114 @@
+:root {
+    --neural-bg: #f8f9fa;
+    --neural-glass: rgba(255, 255, 255, 0.7);
+    --neural-border: rgba(30, 48, 243, 0.1);
+    --neural-accent: #1e30f3;
+    --neural-secondary: #e21e80;
+    --neural-text: #212529;
+    --neural-muted: #6c757d;
+}
+
+body {
+    background-color: var(--neural-bg);
+    color: var(--neural-text);
+    background-image:
+        radial-gradient(at 0% 0%, rgba(30, 48, 243, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(226, 30, 128, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.navbar.glass-nav {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.post-container {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 32px;
+    padding: 4rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.post-header {
+    background: transparent;
+    padding: 4rem 0 2rem 0;
+}
+
+.blog-post h1,
+.blog-post h2,
+.blog-post h3 {
+    color: var(--neural-text);
+    font-weight: 800;
+}
+
+.blog-post p,
+.blog-post ul,
+.blog-post ol {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #4b5563;
+    margin-bottom: 1.5rem;
+}
+
+.blog-post li {
+    margin-bottom: 0.5rem;
+}
+
+.blog-post pre {
+    background: #f8fafc !important;
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    border-radius: 16px !important;
+    padding: 1.5rem !important;
+    margin: 2rem 0 !important;
+}
+
+.blog-post code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95rem;
+}
+
+.equation {
+    background: #f0f4ff;
+    padding: 2rem;
+    border-radius: 16px;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.img-fluid {
+    border-radius: 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: white;
+    color: var(--neural-accent);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: linear-gradient(45deg, var(--neural-accent), var(--neural-secondary));
+    color: white;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .post-container {
+        padding: 2rem;
+        border-radius: 20px;
+    }
+}

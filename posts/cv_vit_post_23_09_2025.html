@@ -1,68 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Explained how ViT works" />
-        <meta name="author" content="Vitaly" />
-        <title>ViT Post</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
-        <!-- Custom Google font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../css/styles.css" rel="stylesheet" />
-    </head>
-    <body class="d-flex flex-column h-100 bg-light">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="../index.html"><span class="fw-bolder text-primary">Neural Paw</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="../index.html">Blog</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
-                            <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
-                        </ul>
-                    </div>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Explained how ViT works" />
+    <meta name="author" content="Vitaly" />
+    <title>ViT Post</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="../css/post.css" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg glass-nav py-3 sticky-top">
+            <div class="container px-5">
+                <a class="navbar-brand" href="../index.html"><span class="fw-bolder text-gradient">Neural Paw</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    </ul>
                 </div>
-            </nav>
-            
-            <!-- Post Header -->
-            <section class="bg-gradient-primary-to-secondary text-white py-5">
-                <div class="container px-5 text-center">
-                    <h1 class="display-4 fw-bolder">🤖 Visual Transformer: The Other CNN</h1>
-                    <p class="lead fw-light">ViT Implemented from scratch, explained and demystified 🪄</p>
-                </div>
-            </section>
+            </div>
+        </nav>
 
-            <!-- Post Content -->
-            <section class="py-5 bg-light">
-                <div class="container px-5">
-                    <div class="row justify-content-center">
-                        <div class="col-xxl-8 blog-post">
-                            <div class="mb-4">
-                                <img src="../assets/vit_card.jpg" class="img-fluid rounded-4 mb-4" alt="ViT illustration">
+        <!-- Post Header -->
+        <header class="post-header">
+            <div class="container px-5 text-center">
+                <h1 class="display-3 fw-bolder mb-3">🤖 Visual Transformer: The Other CNN</h1>
+                <p class="lead fw-light text-muted">ViT Implemented from scratch, explained and demystified 🪄</p>
+            </div>
+        </header>
 
-                                <p>Hey my friends! Are you interested how those super-smart models "see" and understand images? 
-                                    For years, Convolutional Neural Networks (CNNs) were the undisputed kings of computer vision. 
-                                    But guess what? A new hero is in town, and it's brought a whole new way of thinking: the <strong>Visual Transformer (ViT)</strong>!</p>
-                                <p>If you're familiar with Transformers in Natural Language Processing (NLP), you know their magic lies in understanding context. 
-                                    ViT essentially takes that same technique and applies it to pixels. 
-                                    Let's break down this fascinating architecture step-by-step, in easy-to-digest manner! (Yummy! 😋)</p>
+        <!-- Post Content -->
+        <section class="pb-5">
+            <div class="container px-5">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-10 post-container blog-post">
+                        <div class="mb-4">
+                            <img src="../assets/vit_card.jpg" class="img-fluid rounded-4 mb-4" alt="ViT illustration">
 
-                                <h2 style="margin-top:2rem;margin-bottom:1rem;">🔪 Patch Embedder: Slicing a Cucumber</h2>
-                                <p>Imagine you have a beautiful image, but a Transformer doesn't "see" pixels like a CNN does. 
-                                    It works with sequences, so our first step is to chop up the image into smaller patches and transform it into "sequence".</p>
-                                <p>The <code>PatchEmbedder</code> class is our kitchen knife for this task. 
-                                    Instead of traditional slicing and flattening (which can be a bit slow), we use a clever trick: a 2D convolution layer:</p>
-                                <pre><code class="language-python">
+                            <p>Hey my friends! Are you interested how those super-smart models "see" and understand
+                                images?
+                                For years, Convolutional Neural Networks (CNNs) were the undisputed kings of computer
+                                vision.
+                                But guess what? A new hero is in town, and it's brought a whole new way of thinking: the
+                                <strong>Visual Transformer (ViT)</strong>!
+                            </p>
+                            <p>If you're familiar with Transformers in Natural Language Processing (NLP), you know their
+                                magic lies in understanding context.
+                                ViT essentially takes that same technique and applies it to pixels.
+                                Let's break down this fascinating architecture step-by-step, in easy-to-digest manner!
+                                (Yummy! 😋)</p>
+
+                            <h2 style="margin-top:2rem;margin-bottom:1rem;">🔪 Patch Embedder: Slicing a Cucumber</h2>
+                            <p>Imagine you have a beautiful image, but a Transformer doesn't "see" pixels like a CNN
+                                does.
+                                It works with sequences, so our first step is to chop up the image into smaller patches
+                                and transform it into "sequence".</p>
+                            <p>The <code>PatchEmbedder</code> class is our kitchen knife for this task.
+                                Instead of traditional slicing and flattening (which can be a bit slow), we use a clever
+                                trick: a 2D convolution layer:</p>
+                            <pre><code class="language-python">
 class PatchEmbedder(nn.Module):
     def __init__(self, in_channels, patch_size, hidden_dim):
         super().__init__()
@@ -89,37 +105,54 @@ class PatchEmbedder(nn.Module):
 
                             <p><strong>What's happening here?</strong></p>
                             <ul>
-                                <li><code>nn.Conv2d</code>: This is the star of the show. By setting <code>kernel_size</code> and <code>stride</code> equal to our <code>patch_size</code>, 
-                                    the convolution acts like a non-overlapping window. 
-                                    It slides across the image, "seeing" one patch at a time and transforming it into a vector with <code>hidden_dim</code> size.</li>
-                                <li><code>rearrange(...)</code>: After the convolution, our data has a shape like <code>(batch_size, hidden_dim, num_patches_height, num_patches_width)</code>. 
-                                    The Transformer prefers a sequence, so we flatten the patch dimensions <code>(h, w)</code> into a single sequence dimension, 
-                                    resulting in <code>(batch_size, num_patches, hidden_dim)</code>. 
-                                    For a 28x28 MNIST image with a 4x4 patch size, you get (28/4) * (28/4) = 7 * 7 = <b>49 patches</b>!</li>
+                                <li><code>nn.Conv2d</code>: This is the star of the show. By setting
+                                    <code>kernel_size</code> and <code>stride</code> equal to our
+                                    <code>patch_size</code>,
+                                    the convolution acts like a non-overlapping window.
+                                    It slides across the image, "seeing" one patch at a time and transforming it into a
+                                    vector with <code>hidden_dim</code> size.
+                                </li>
+                                <li><code>rearrange(...)</code>: After the convolution, our data has a shape like
+                                    <code>(batch_size, hidden_dim, num_patches_height, num_patches_width)</code>.
+                                    The Transformer prefers a sequence, so we flatten the patch dimensions
+                                    <code>(h, w)</code> into a single sequence dimension,
+                                    resulting in <code>(batch_size, num_patches, hidden_dim)</code>.
+                                    For a 28x28 MNIST image with a 4x4 patch size, you get (28/4) * (28/4) = 7 * 7 =
+                                    <b>49 patches</b>!
+                                </li>
                             </ul>
 
                             <div style="text-align: center;">
-                                <img 
-                                    src="../assets/vit_patch_embeddings.png"
-                                    alt="Patch embeddings viz" 
-                                    style="max-width:100%; border-radius:12px;"
-                                >
-                                <p style="font-size: 14px; color: gray;">Patch embeddings vizualization.</p>
+                                <img src="../assets/vit_patch_embeddings.png" alt="Patch embeddings viz"
+                                    style="max-width:100%; border-radius:12px;">
+                                <p style="font-size: 14px; color: gray;">Patch embeddings visualization.</p>
                             </div>
 
-                            <p>So, we've taken an image and turned it into a sequence of feature vectors, each representing a patch. </p>
+                            <p>So, we've taken an image and turned it into a sequence of feature vectors, each
+                                representing a patch. </p>
                             <p>THE SHOW STARTS HERE! 🚩</p>
-                            
-                            <h2 style="margin-top:2rem;margin-bottom:1rem;">💁 CLS Token and Positional Encoding: Giving Patches Context</h2>
-                            <p>Now that we have our sequence of patch embeddings, there are two crucial additions we need to make:</p>
+
+                            <h2 style="margin-top:2rem;margin-bottom:1rem;">💁 CLS Token and Positional Encoding: Giving
+                                Patches Context</h2>
+                            <p>Now that we have our sequence of patch embeddings, there are two crucial additions we
+                                need to make:</p>
                             <ol>
-                                <li><strong>The CLS (Classification) Token:</strong> The CLS token is like a "designated summarizer". 
-                                    It's a special, learnable vector which knows everythiong about our sequence of patch embeddings. 
-                                    Its job is to accumulate global information from all the patches and eventually be used for classification.</li>
-                                <li><strong>Positional Encoding:</strong> When you read a sentence, the order of words matters. 
-                                    "Dog bites man" is very different from "Man bites dog." Similarly, the spatial position of a patch in an image is crucial. 
-                                    Transformers, by themselves, don't inherently understand order. That's where positional encoding comes in. 
-                                    We add a learnable vector to each patch embedding, unique to its position, so the model knows where each patch belongs in the scheme of the image.</li>
+                                <li><span style="font-weight: 600;">The CLS (Classification) Token:</span> The CLS token
+                                    is like a "designated
+                                    summarizer".
+                                    It's a special, learnable vector which knows everything about our sequence of patch
+                                    embeddings.
+                                    Its job is to accumulate global information from all the patches and eventually be
+                                    used for classification.</li>
+                                <li><span style="font-weight: 600;">Positional Encoding:</span> When you read a
+                                    sentence, the order of words
+                                    matters.
+                                    "Dog bites man" is very different from "Man bites dog." Similarly, the spatial
+                                    position of a patch in an image is crucial.
+                                    Transformers, by themselves, don't inherently understand order. That's where
+                                    positional encoding comes in.
+                                    We add a learnable vector to each patch embedding, unique to its position, so the
+                                    model knows where each patch belongs in the scheme of the image.</li>
                             </ol>
                             <pre><code class="language-python">
 class PositionalEncoder(nn.Module):
@@ -144,27 +177,35 @@ class PositionalEncoder(nn.Module):
         cls_patch_embeddings = torch.cat((cls_token, patch_embeddings), dim=1)
         return cls_patch_embeddings + self.positional_embeddings
                             </code></pre>
-                            <p><strong>Breaking it down:</strong></p>
+                            <p><span style="font-weight: 600;">Breaking it down:</span></p>
                             <ul>
-                                <li><code>self.cls_token</code>: This is our special classification token, initialized randomly and will be learned during training. 
+                                <li><code>self.cls_token</code>: This is our special classification token, initialized
+                                    randomly and will be learned during training.
                                     We <code>expand</code> it to match the batch size.</li>
-                                <li><code>torch.cat(...)</code>: We concatenate the CLS token with our patch embeddings along the sequence dimension. 
+                                <li><code>torch.cat(...)</code>: We concatenate the CLS token with our patch embeddings
+                                    along the sequence dimension.
                                     Now our sequence is <code>(batch_size, num_patches + 1, hidden_dim)</code>.</li>
-                                <li><code>self.positional_embeddings</code>: Similar to the CLS token, these are learnable embeddings for each position. 
-                                    We simply add them to our combined (CLS + patch) embeddings. This simple addition is how the model gets its sense of order and location.</li>
+                                <li><code>self.positional_embeddings</code>: Similar to the CLS token, these are
+                                    learnable embeddings for each position.
+                                    We simply add them to our combined (CLS + patch) embeddings. This simple addition is
+                                    how the model gets its sense of order and location.</li>
                             </ul>
-                            <p>At this point, our image is a sequential data stream, complete with spatial context and a global summary token, 
+                            <p>At this point, our image is a sequential data stream, complete with spatial context and a
+                                global summary token,
                                 ready for the Transformer's main event: <b>Attention!</b></p>
-                            
-                            <h2 style="margin-top:2rem;margin-bottom:1rem;">🤯 The Attention Head: "Forgot your head at home, didn't you?"</h2>
-                            <p>The core innovation of Transformers is the <b>Self-Attention</b> mechanism. 
-                                It allows each patch to "look at" every other patch (and the CLS token) in the sequence and decide how important they are to its own understanding. 
+
+                            <h2 style="margin-top:2rem;margin-bottom:1rem;">🤯 The Attention Head: "Forgot your head at
+                                home, didn't you?"</h2>
+                            <p>The core innovation of Transformers is the <b>Self-Attention</b> mechanism.
+                                It allows each patch to "look at" every other patch (and the CLS token) in the sequence
+                                and decide how important they are to its own understanding.
                             </p>
-                            <p>Each <code>AttentionHead</code> calculates three things for every input vector (patch or CLS token):</p>
+                            <p>Each <code>AttentionHead</code> calculates three things for every input vector (patch or
+                                CLS token):</p>
                             <ul>
-                                <li><strong>Query (Q):</strong> What am I looking for?</li>
-                                <li><strong>Key (K):</strong> What do I have?</li>
-                                <li><strong>Value (V):</strong> What information do I carry?</li>
+                                <li><span style="font-weight: 600;">Query (Q):</span> What am I looking for?</li>
+                                <li><span style="font-weight: 600;">Key (K):</span> What do I have?</li>
+                                <li><span style="font-weight: 600;">Value (V):</span> What information do I carry?</li>
                             </ul>
                             <pre><code class="language-python">
 class AttentionHead(nn.Module):
@@ -191,27 +232,40 @@ class AttentionHead(nn.Module):
         return attention
                             </code></pre>
                             <p>Here's the formula:</p>
-                            <p class="equation">$$ \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V $$</p>
-                            <p>Where \(d_k\) is <code>head_size</code> (the dimension of the keys). 
-                                This scaling factor prevents very large values in the dot product from pushing the softmax into regions with tiny gradients.</p>
-                            <p><strong>A bit more explanation:</strong></p>
+                            <p class="equation">$$ \text{Attention}(Q, K, V) =
+                                \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V $$</p>
+                            <p>Where \(d_k\) is <code>head_size</code> (the dimension of the keys).
+                                This scaling factor prevents very large values in the dot product from pushing the
+                                softmax into regions with tiny gradients.</p>
+                            <p><span style="font-weight: 600;">A bit more explanation:</span></p>
                             <ol>
-                                <li>We project our input into Query, Key, and Value representations using linear layers.</li>
-                                <li>We calculate <code>attention_scores</code> by taking the dot product of Query with all Keys (\(QK^T\)). 
-                                    This tells us how well each patch's "query" matches every other patch's "key." A higher score means more relevance.</li>
+                                <li>We project our input into Query, Key, and Value representations using linear layers.
+                                </li>
+                                <li>We calculate <code>attention_scores</code> by taking the dot product of Query with
+                                    all Keys (\(QK^T\)).
+                                    This tells us how well each patch's "query" matches every other patch's "key." A
+                                    higher score means more relevance.</li>
                                 <li>We divide by the square root of <code>head_size</code> for stabilization.</li>
-                                <li><code>torch.softmax</code> turns these scores into probabilities (<code>attention_weights</code>), ensuring they sum to 1. 
+                                <li><code>torch.softmax</code> turns these scores into probabilities
+                                    (<code>attention_weights</code>), ensuring they sum to 1.
                                     This is how each patch decides how much "attention" to give to other patches.</li>
-                                <li>Finally, we multiply these <code>attention_weights</code> by the Value vectors (\(attention\_weights \cdot V\)). 
+                                <li>Finally, we multiply these <code>attention_weights</code> by the Value vectors
+                                    (\(attention\_weights \cdot V\)).
                                     This means patches that are deemed more relevant contribute more to the output.</li>
                             </ol>
-                            <p>The result is a new representation for each patch, enriched with information from all other patches, weighted by their relevance!</p>
-                            
-                            <h2 style="margin-top:2rem;margin-bottom:1rem;">🗣️🗣️🗣️ Multi-Head Attention: Many Heads Are Better Than One</h2>
-                            <p><b>"WE NEED TO STACK MORE LAYERS!"</b> - remember?" One attention head is really good, but what if different heads could focus on different aspects 
-                                of relationships between patches? That's the idea behind Multi-Head Self-Attention (MHSA)!</p>
-                            <p>Instead of just one attention calculation, we run several <code>AttentionHead</code> in parallel. 
-                                Each head learns different Q, K, V projections and therefore captures different types of relationships.</p>
+                            <p>The result is a new representation for each patch, enriched with information from all
+                                other patches, weighted by their relevance!</p>
+
+                            <h2 style="margin-top:2rem;margin-bottom:1rem;">🗣️🗣️🗣️ Multi-Head Attention: Many Heads
+                                Are Better Than One</h2>
+                            <p><b>"WE NEED TO STACK MORE LAYERS!"</b> - remember?" One attention head is really good,
+                                but what if different heads could focus on different aspects
+                                of relationships between patches? That's the idea behind Multi-Head Self-Attention
+                                (MHSA)!</p>
+                            <p>Instead of just one attention calculation, we run several <code>AttentionHead</code> in
+                                parallel.
+                                Each head learns different Q, K, V projections and therefore captures different types of
+                                relationships.</p>
                             <pre><code class="language-python">
 class AttentionMultiHead(nn.Module):
     def __init__(self, hidden_dim, head_size, num_heads):
@@ -234,14 +288,25 @@ class AttentionMultiHead(nn.Module):
                             <ul>
                                 <li>We create a list of independent <code>AttentionHead</code> instances.</li>
                                 <li>In the <code>forward</code> pass, each head processes the input independently.</li>
-                                <li>The outputs from all heads are then concatenated (<code>torch.cat</code>) along the feature dimension. If you have <code>num_heads</code> heads, each producing <code>head_size</code> features, you'll get a concatenated vector of size <code>head_size * num_heads</code>.</li>
-                                <li>Finally, a linear layer (<code>self.dim_restoration</code>) projects this concatenated output back to the original <code>hidden_dim</code>, ensuring that the input and output dimensionality of the MHSA block remain consistent. This is super important for stacking multiple blocks!</li>
+                                <li>The outputs from all heads are then concatenated (<code>torch.cat</code>) along the
+                                    feature dimension. If you have <code>num_heads</code> heads, each producing
+                                    <code>head_size</code> features, you'll get a concatenated vector of size
+                                    <code>head_size * num_heads</code>.
+                                </li>
+                                <li>Finally, a linear layer (<code>self.dim_restoration</code>) projects this
+                                    concatenated output back to the original <code>hidden_dim</code>, ensuring that the
+                                    input and output dimensionality of the MHSA block remain consistent. This is super
+                                    important for stacking multiple blocks!</li>
                             </ul>
-                            <p>Multi-Head Attention allows the model to simultaneously attend to information from different representation subspaces at different positions. 
-                                It's literally a team of multiple experts analyzing the same problem from different angles. Juniour, middle, senior.. you know 😂</p>
-                            
-                            <h2 style="margin-top:2rem;margin-bottom:1rem;">💪 The Transformer Encoder Block: The Core</h2>
-                            <p>Now we combine Multi-Head Self-Attention with a few other components to form a complete Transformer Encoder Block.
+                            <p>Multi-Head Attention allows the model to simultaneously attend to information from
+                                different representation subspaces at different positions.
+                                It's literally a team of multiple experts analyzing the same problem from different
+                                angles. Junior, middle, senior.. you know 😂</p>
+
+                            <h2 style="margin-top:2rem;margin-bottom:1rem;">💪 The Transformer Encoder Block: The Core
+                            </h2>
+                            <p>Now we combine Multi-Head Self-Attention with a few other components to form a complete
+                                Transformer Encoder Block.
                                 This block is repeated multiple times to build the full Transformer.</p>
                             <pre><code class="language-python">
 class BlockViT(nn.Module):
@@ -263,22 +328,32 @@ class BlockViT(nn.Module):
         out = out + self.mlp(self.norm2(out))
         return out
                             </code></pre>
-                            <p><strong>Let's unpack this powerhouse:</strong></p>
+                            <p><span style="font-weight: 600;">Let's unpack this powerhouse:</span></p>
                             <ul>
-                                <li><code>nn.LayerNorm(...)</code>: Normalization layers are crucial for stable training, especially in deep networks. 
+                                <li><code>nn.LayerNorm(...)</code>: Normalization layers are crucial for stable
+                                    training, especially in deep networks.
                                     They normalize the input features across the hidden dimension.</li>
                                 <li><code>self.mhsa(...)</code>: Our Multi-Head Self-Attention.</li>
-                                <li><code>self.mlp(...)</code>: A simple Feed-Forward Network (Multi-Layer Perceptron) with two linear layers and a 
-                                    GELU activation function in between. This allows the model to process the information learned by attention further.</li>
-                                <li><strong>Residual Connections (<code>input + ...</code> and <code>out + ...</code>):</strong> This is a critical component 
-                                    borrowed from ResNets (We didn't forget you, grandfather 👴). 
-                                    It helps information flow more easily through very deep networks by adding the input directly to the output of a sub-layer. 
+                                <li><code>self.mlp(...)</code>: A simple Feed-Forward Network (Multi-Layer Perceptron)
+                                    with two linear layers and a
+                                    GELU activation function in between. This allows the model to process the
+                                    information learned by attention further.</li>
+                                <li><span style="font-weight: 600;">Residual Connections (<code>input + ...</code> and
+                                        <code>out + ...</code>):</span> This is a critical component
+                                    borrowed from ResNets (We didn't forget you, grandfather 👴).
+                                    It helps information flow more easily through very deep networks by adding the input
+                                    directly to the output of a sub-layer.
                                     This prevents vanishing gradients and allows for deeper models.</li>
                             </ul>
-                            <p>So, each block takes our sequence of embeddings, normalizes it, applies multi-head attention, normalizes it again, applies an MLP, and finally adds back the original input (residual connection) to ensure smooth information flow. This process refines the understanding of each patch's context.</p>
-                            
-                            <h2 style="margin-top:2rem;margin-bottom:1rem;">🏁 Assembling the SimpleViT: The Grand Finale!</h2>
-                            <p>Finally, let's put all the pieces together into our complete <code>SimpleViT</code> model!</p>
+                            <p>So, each block takes our sequence of embeddings, normalizes it, applies multi-head
+                                attention, normalizes it again, applies an MLP, and finally adds back the original input
+                                (residual connection) to ensure smooth information flow. This process refines the
+                                understanding of each patch's context.</p>
+
+                            <h2 style="margin-top:2rem;margin-bottom:1rem;">🏁 Assembling the SimpleViT: The Grand
+                                Finale!</h2>
+                            <p>Finally, let's put all the pieces together into our complete <code>SimpleViT</code>
+                                model!</p>
                             <pre><code class="language-python">
 class SimpleViT(nn.Module):
     def __init__(self, in_channels, image_size, patch_size, hidden_dim, num_layers, head_size, num_heads, mlp_hidden_size):
@@ -307,30 +382,46 @@ class SimpleViT(nn.Module):
         
         return classification_result
                             </code></pre>
-                            <p><strong>The full journey of an image through SimpleViT:</strong></p>
+                            <p><span style="font-weight: 600;">The full journey of an image through SimpleViT:</span>
+                            </p>
                             <ol>
-                                <li>An image first goes through the <code>patch_embedder</code>, getting chopped into patches and converted into a sequence of feature vectors.</li>
-                                <li>Then, the <code>positional_encoder</code> adds a special CLS token and positional information to these patch embeddings.</li>
-                                <li>This enriched sequence is then fed through a series of <code>encoder_blocks</code> (<code>num_layers</code> of them). 
+                                <li>An image first goes through the <code>patch_embedder</code>, getting chopped into
+                                    patches and converted into a sequence of feature vectors.</li>
+                                <li>Then, the <code>positional_encoder</code> adds a special CLS token and positional
+                                    information to these patch embeddings.</li>
+                                <li>This enriched sequence is then fed through a series of <code>encoder_blocks</code>
+                                    (<code>num_layers</code> of them).
                                     Each block refines the understanding of the relationships between patches.</li>
-                                <li>After all the encoder blocks, we're left with a highly contextualized sequence. 
-                                    We're primarily interested in the <code>cls_token</code> (the first element, <code>encodings[:, 0, :]</code>) because it has 
-                                    absorbed information from all other patches and represents the global context.</li>
-                                <li>Finally, this <code>cls_token</code> is passed through a simple <code>classifier</code> (a linear layer followed by Softmax) 
-                                    to predict the class of the input image!</li>
+                                <li>After all the encoder blocks, we're left with a highly contextualized sequence.
+                                    We're primarily interested in the <code>cls_token</code> (the first element,
+                                    <code>encodings[:, 0, :]</code>) because it has
+                                    absorbed information from all other patches and represents the global context.
+                                </li>
+                                <li>Finally, this <code>cls_token</code> is passed through a simple
+                                    <code>classifier</code> (a linear layer followed by Softmax)
+                                    to predict the class of the input image!
+                                </li>
                             </ol>
-                            <p>And there you have it! A complete Visual Transformer, built from the ground up. 
-                            
-                            <h2 style="margin-top:2rem;margin-bottom:1rem;">📌Conclusion: A New Era for Computer Vision?</h2>
-                            <p>The Visual Transformer represents a paradigm shift in computer vision. 
-                                By adapting the incredibly successful Transformer architecture from NLP, ViT has shown that images can be treated as sequences of patches, 
-                                opening up new directions for how we process visual data. It's often called as the "new CNN" because it achieves state-of-the-art results 
-                                on many image recognition tasks, often with fewer inductive biases than traditional CNNs.</p>
-                            <p>While CNNs have their strengths, ViT's ability to capture long-range dependencies across an image (thanks to self-attention) 
-                                makes it incredibly powerful. It's a testament to the power of generalization in AI research, proving that architectures designed 
-                                forhttps://excalidraw.com/ one domain can find huge success in another!</p>
+                            <p>And there you have it! A complete Visual Transformer, built from the ground up.
+
+                            <h2 style="margin-top:2rem;margin-bottom:1rem;">📌Conclusion: A New Era for Computer Vision?
+                            </h2>
+                            <p>The Visual Transformer represents a paradigm shift in computer vision.
+                                By adapting the incredibly successful Transformer architecture from NLP, ViT has shown
+                                that images can be treated as sequences of patches,
+                                opening up new directions for how we process visual data. It's often called as the "new
+                                CNN" because it achieves state-of-the-art results
+                                on many image recognition tasks, often with fewer inductive biases than traditional
+                                CNNs.</p>
+                            <p>While CNNs have their strengths, ViT's ability to capture long-range dependencies across
+                                an image (thanks to self-attention)
+                                makes it incredibly powerful. It's a testament to the power of generalization in AI
+                                research, proving that architectures designed
+                                for one domain can find huge success in another!</p>
                             <p>Want to dive deeper and see this implementation in action? </p>
-                            <p>🔗 Check out the full repository here: <a href="https://github.com/Vitgracer/ViT-from-scratch" target="_blank">ViT from Scratch</a>.</p>
+                            <p>🔗 Check out the full repository here: <a
+                                    href="https://github.com/Vitgracer/ViT-from-scratch" target="_blank">ViT from
+                                    Scratch</a>.</p>
 
                             <!-- Post Footer -->
                             <div class="d-flex justify-content-between text-muted">
@@ -340,18 +431,26 @@ class SimpleViT(nn.Module):
                         </div>
                     </div>
                 </div>
-            </section>
-        </main>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        
-        <!-- Prism.js CSS + JS for code highlighting -->
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+        </section>
+    </main>
 
-        <!-- LaTeX rendering -->
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- Footer -->
+    <footer class="mt-auto py-4 text-center bg-white border-top">
+        <div class="container px-5">
+            <div class="small text-muted">Copyright &copy; Vitalii • Neural Paw 2026</div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    </body>
+    <!-- Prism.js CSS + JS for code highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+    <!-- LaTeX rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</body>
+
 </html>
