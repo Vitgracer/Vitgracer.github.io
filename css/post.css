@@ -74,12 +74,21 @@ body {
 
 .equation {
     background: #f0f4ff;
-    padding: 2rem;
+    padding: 2rem 1rem;
     border-radius: 16px;
     margin: 2rem 0;
     text-align: center;
     overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
+}
+
+/* Ensure MathJax containers don't break the layout and allow scrolling */
+.equation mjx-container {
+    display: inline-block !important;
+    min-width: 100%;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 .img-fluid {
