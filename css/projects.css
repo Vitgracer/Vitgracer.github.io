@@ -1,0 +1,137 @@
+:root {
+    --neural-bg: #f8f9fa;
+    --neural-glass: rgba(255, 255, 255, 0.7);
+    --neural-glass-hover: rgba(255, 255, 255, 0.9);
+    --neural-border: rgba(30, 48, 243, 0.1);
+    --neural-accent: #1e30f3;
+    --neural-secondary: #e21e80;
+    --neural-text: #212529;
+    --neural-muted: #6c757d;
+}
+
+body.neural-theme-light {
+    background-color: var(--neural-bg);
+    color: var(--neural-text);
+    background-image:
+        radial-gradient(at 0% 0%, rgba(30, 48, 243, 0.05) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(226, 30, 128, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.text-gradient {
+    background: linear-gradient(45deg, var(--neural-accent), var(--neural-secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.glass-card {
+    background: var(--neural-glass);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--neural-border);
+    border-radius: 32px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 32px rgba(30, 48, 243, 0.05);
+    overflow: hidden;
+}
+
+.glass-card:hover {
+    background: var(--neural-glass-hover);
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(30, 48, 243, 0.1);
+    border-color: rgba(30, 48, 243, 0.2);
+}
+
+.animate-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-active {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.navbar.glass-nav {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.project-img-container {
+    overflow: hidden;
+    position: relative;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(30, 48, 243, 0.02);
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.glass-card:hover .project-img {
+    transform: scale(1.05);
+}
+
+.btn-neural {
+    background: linear-gradient(45deg, var(--neural-accent), var(--neural-secondary));
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 16px;
+    font-weight: 700;
+    transition: all 0.3s;
+    box-shadow: 0 8px 20px rgba(30, 48, 243, 0.2);
+}
+
+.btn-neural:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(30, 48, 243, 0.3);
+    color: white;
+}
+
+.cta-section {
+    background: linear-gradient(45deg, var(--neural-accent), var(--neural-secondary));
+    border-radius: 40px;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 86c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm66 3c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm-46-43c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm20-46c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM38 11c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zm32 82c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM28 35c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM0 10c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm88 25c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM30 65c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm60-5c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zM70 10c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm-60 80c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+    opacity: 0.5;
+}
+
+.list-item-neural {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: var(--neural-text);
+    opacity: 0.85;
+}
+
+.list-item-neural::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--neural-accent);
+    font-weight: bold;
+}
