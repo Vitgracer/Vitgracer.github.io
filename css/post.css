@@ -78,6 +78,8 @@ body {
     border-radius: 16px;
     margin: 2rem 0;
     text-align: center;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .img-fluid {
