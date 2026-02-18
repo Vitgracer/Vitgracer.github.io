@@ -169,3 +169,14 @@ body.neural-theme-light {
 .smaller {
     font-size: 0.8rem;
 }
+
+/* Mobile Fixes */
+@media (max-width: 1199.98px) {
+    .row.g-4.mb-5>div {
+        margin-bottom: 2rem;
+    }
+
+    .glass-card.h-100 {
+        height: auto !important;
+    }
+}

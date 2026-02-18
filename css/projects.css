@@ -135,3 +135,18 @@ body.neural-theme-light {
     color: var(--neural-accent);
     font-weight: bold;
 }
+
+/* Mobile Fixes */
+@media (max-width: 767.98px) {
+    .cta-section .btn-lg {
+        padding: 12px 20px !important;
+        font-size: 1rem !important;
+        white-space: normal;
+        display: inline-block;
+        width: 100%;
+    }
+
+    .cta-section h2 {
+        font-size: 1.8rem !important;
+    }
+}
