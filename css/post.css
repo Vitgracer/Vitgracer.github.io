@@ -83,12 +83,20 @@ body {
     -webkit-overflow-scrolling: touch;
 }
 
-/* Ensure MathJax containers don't break the layout and allow scrolling */
-.equation mjx-container {
-    display: inline-block !important;
-    min-width: 100%;
-    margin-top: 0 !important;
-    margin-bottom: 0 !important;
+/* Ensure ALL MathJax display formulas are responsive and scrollable */
+mjx-container[display="true"] {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    max-width: 100% !important;
+    padding: 0.5rem 0 !important;
+    -webkit-overflow-scrolling: touch;
+    display: block !important;
+}
+
+/* Specific fix for centered paragraphs with formulas */
+p.text-center mjx-container[display="true"] {
+    margin-left: auto !important;
+    margin-right: auto !important;
 }
 
 .img-fluid {

@@ -74,14 +74,14 @@
                                 <strong>“fish”</strong> to understand the meaning.
                             </p>
                             <p><strong>Formula:</strong></p>
-                            <p class="text-center">
+                            <div class="equation">
                                 \[
                                 Q, K, V \gets \text{same set of tokens}
                                 \]
                                 \[
                                 \text{Attention} = \text{softmax}\Big(\frac{Q K^\top}{\sqrt{d}}\Big) V
                                 \]
-                            </p>
+                            </div>
 
                             <hr>
 
@@ -95,7 +95,7 @@
                                 Cross-attention allows text tokens to peek at visual features from the image and
                                 understand it better.</p>
                             <p><strong>Formula:</strong></p>
-                            <p class="text-center">
+                            <div class="equation">
                                 \[
                                 Q \gets \text{tokens from set A (text)},
                                 \]
@@ -105,7 +105,7 @@
                                 \[
                                 \text{Attention} = \text{softmax}\Big(\frac{Q K^\top}{\sqrt{d}}\Big) V
                                 \]
-                            </p>
+                            </div>
 
                             <p>📝 In short: <strong>self-attention</strong> understands relationships <em>within</em>
                                 one set, while <strong>cross-attention</strong> merges information <em>between</em>

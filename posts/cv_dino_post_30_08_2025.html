@@ -109,9 +109,11 @@
                             <p>We take a <strong>Gram teacher</strong> - an early snapshot of the model with
                                 high-quality dense features - and pushes the student model to match its Gram matrix:</p>
 
-                            \[
-                            L_{\text{Gram}} = \left\| X_S X_S^\top - X_G X_G^\top \right\|_F^2
-                            \]
+                            <div class="equation">
+                                \[
+                                L_{\text{Gram}} = \left\| X_S X_S^\top - X_G X_G^\top \right\|_F^2
+                                \]
+                            </div>
 
                             <ul>
                                 <li><strong>X<sub>S</sub></strong> — L2-normalized patch features of the student</li>

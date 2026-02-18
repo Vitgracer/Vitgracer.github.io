@@ -67,7 +67,7 @@
                             <h3 style="margin-top:2rem;margin-bottom:1rem;">What is Linear Regression?</h3>
                             <p>At its core, linear regression tries to fit a <strong>straight line</strong> (or
                                 hyperplane in higher dimensions) to our data points. The general equation is:</p>
-                            <p class="text-center">\( Y \approx X W + b \)</p>
+                            <div class="equation">\( Y \approx X W + b \)</div>
                             <ul>
                                 <li><strong>X</strong> — matrix of input features (samples x features)</li>
                                 <li><strong>W</strong> — vector of weights</li>
@@ -80,12 +80,14 @@
                             <p>We measure how “wrong” our predictions are using the <strong>Mean Squared Error
                                     (MSE)</strong>:</p>
 
-                            \[
-                            \begin{aligned}
-                            L(W, b) = \frac{1}{m} \sum_{i=1}^{m} (y_i - \hat{y}_i)^2 \\
-                            = \frac{1}{m} \sum_{i=1}^{m} (y_i - (X_i W + b))^2
-                            \end{aligned}
-                            \]
+                            <div class="equation">
+                                \[
+                                \begin{aligned}
+                                L(W, b) = \frac{1}{m} \sum_{i=1}^{m} (y_i - \hat{y}_i)^2 \\
+                                = \frac{1}{m} \sum_{i=1}^{m} (y_i - (X_i W + b))^2
+                                \end{aligned}
+                                \]
+                            </div>
 
                             <p>Where <strong>m</strong> is the number of samples. Minimizing this loss means finding
                                 \(W\) and \(b\) that best fit the data.</p>
@@ -94,44 +96,44 @@
                             <p>To minimize MSE, we use <strong>gradient descent</strong>. The gradients of the loss with
                                 respect to \(W\) are:</p>
 
-                            <p class="text-center">
+                            <div class="equation">
                                 $$\frac{\partial L}{\partial W} = \frac{\partial}{\partial W} \frac{1}{m} \sum_{i=1}^{m}
                                 (y_i - (X_i W + b))^2$$
-                            </p>
+                            </div>
                             <p>Simplify using chain rule:</p>
-                            <p class="text-center">
+                            <div class="equation">
                                 $$\frac{\partial L}{\partial W} = \frac{1}{m} \sum_{i=1}^{m} 2 (y_i - (X_i W + b)) \cdot
                                 (-X_i)$$
-                            </p>
+                            </div>
                             <p>Factor out the negative sign:</p>
-                            <p class="text-center">
+                            <div class="equation">
                                 $$\frac{\partial L}{\partial W} = -\frac{2}{m} \sum_{i=1}^{m} (y_i - (X_i W + b)) X_i$$
-                            </p>
+                            </div>
                             <p>Or equivalently:</p>
-                            <p class="text-center">
+                            <div class="equation">
                                 $$\frac{\partial L}{\partial W} = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}_i - y_i) X_i$$
-                            </p>
+                            </div>
 
 
                             <p>Partial derivative for bias:</p>
-                            <p class="text-center">
+                            <div class="equation">
                                 $$\frac{\partial L}{\partial b} = \frac{\partial}{\partial b} \frac{1}{m} \sum_{i=1}^{m}
                                 (y_i - (X_i W + b))^2$$
-                            </p>
+                            </div>
                             <p>Using chain rule:</p>
-                            <p class="text-center">
+                            <div class="equation">
                                 $$\frac{\partial L}{\partial b} = \frac{1}{m} \sum_{i=1}^{m} 2 (y_i - (X_i W + b)) \cdot
                                 (-1)$$
-                            </p>
+                            </div>
                             <p>Factor out the negative sign and simplify:</p>
-                            <p class="text-center">
+                            <div class="equation">
                                 $$\frac{\partial L}{\partial b} = \frac{1}{m} \sum_{i=1}^{m} (\hat{y}_i - y_i)$$
-                            </p>
+                            </div>
 
                             <p>🎯 Final gradients: 🎯</p>
-                            <p class="text-center">\( \frac{\partial L}{\partial W} = \frac{1}{m} X^T (\hat{Y} - Y) \)
-                            </p>
-                            <p class="text-center">\( \frac{\partial L}{\partial b} = \frac{1}{m} (\hat{Y} - Y) \)</p>
+                            <div class="equation">\( \frac{\partial L}{\partial W} = \frac{1}{m} X^T (\hat{Y} - Y) \)
+                            </div>
+                            <div class="equation">\( \frac{\partial L}{\partial b} = \frac{1}{m} (\hat{Y} - Y) \)</div>
                             <p>These gradients tell us the direction to update \(W\) and \(b\) to reduce the loss.
                                 Conceptually:</p>
                             <ul>

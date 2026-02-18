@@ -80,7 +80,7 @@
                                 We say:
                             </p>
 
-                            \[ A \mathbf{v} = \lambda \mathbf{v} \]
+                            <div class="equation">\[ A \mathbf{v} = \lambda \mathbf{v} \]</div>
 
                             <p>
                                 Where:
@@ -117,9 +117,11 @@
                             </ul>
 
                             <p>Covariance matrices are <em>symmetric</em> and defined below:</p>
-                            \[
-                            \Sigma = \frac{1}{n} X^\top X
-                            \]
+                            <div class="equation">
+                                \[
+                                \Sigma = \frac{1}{n} X^\top X
+                                \]
+                            </div>
 
                             <p>Symmetric matrices have some powers:</p>
                             <ul>
@@ -142,23 +144,29 @@
                             <ol>
                                 <li>Center the data: subtract the mean from each feature.</li>
                                 <li>Compute the covariance:
-                                    \[
-                                    \Sigma = \frac{X_c^\top X_c}{n-1}
-                                    \]
+                                    <div class="equation">
+                                        \[
+                                        \Sigma = \frac{X_c^\top X_c}{n-1}
+                                        \]
+                                    </div>
                                 </li>
                                 <li>Find eigenvalues and eigenvectors of \(\Sigma\).</li>
                                 <li>Sort them by descending eigenvalue, keep the top \(k\) vectors — these are the
                                     <em>principal components</em>.
                                 </li>
                                 <li>Project the data:
-                                    \[
-                                    Z = X_c \cdot W_k
-                                    \]
+                                    <div class="equation">
+                                        \[
+                                        Z = X_c \cdot W_k
+                                        \]
+                                    </div>
                                 </li>
                                 <li>Explained variance ratio:
-                                    \[
-                                    evr = \frac{\lambda_i}{\sum \lambda_j}
-                                    \]
+                                    <div class="equation">
+                                        \[
+                                        evr = \frac{\lambda_i}{\sum \lambda_j}
+                                        \]
+                                    </div>
                                 </li>
                             </ol>
 
