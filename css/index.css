@@ -242,3 +242,22 @@ body.neural-theme-light {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     margin-bottom: 25px;
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .hero-glass-container {
+        padding: 1.5rem !important;
+    }
+
+    .about-glass {
+        padding: 1.5rem !important;
+    }
+
+    .hero-section {
+        padding: 1rem 0;
+    }
+}

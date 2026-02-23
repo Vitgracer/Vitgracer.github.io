@@ -180,3 +180,14 @@ body.neural-theme-light {
         height: auto !important;
     }
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    .timeline-item {
+        padding-left: 30px;
+    }
+}

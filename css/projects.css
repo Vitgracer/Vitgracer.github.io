@@ -150,3 +150,10 @@ body.neural-theme-light {
         font-size: 1.8rem !important;
     }
 }
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+}
