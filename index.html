@@ -20,6 +20,15 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
     <link href="css/index.css" rel="stylesheet" />
+    <!-- Three.js Import Map -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
 </head>
 
 <body class="d-flex flex-column h-100 neural-theme-light">
@@ -60,10 +69,10 @@
                     </div>
                     <div class="col-xxl-6 animate-in" style="transition-delay: 0.2s;">
                         <!-- Header profile picture-->
-                        <div class="profile-container text-center">
+                        <div class="profile-container swarm-active text-center">
                             <div class="profile-bg"></div>
-                            <div class="profile-img-wrapper">
-                                <img src="assets/profile.png" class="profile-img" alt="Vitalii">
+                            <div class="profile-img-wrapper swarm-wrapper">
+                                <div id="swarm-container" class="profile-img-canvas-container"></div>
                             </div>
                         </div>
                     </div>
@@ -381,6 +390,7 @@
             });
         });
     </script>
+    <!-- Three.js Interactive Swarm -->
+    <script type="module" src="scripts/swarm.js"></script>
 </body>
-
 </html>

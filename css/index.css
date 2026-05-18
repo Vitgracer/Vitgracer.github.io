@@ -133,6 +133,47 @@ body.neural-theme-light {
     z-index: 1;
 }
 
+/* Swarm Canvas Container */
+.profile-img-canvas-container {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 40px;
+    overflow: hidden;
+    position: relative;
+    background: transparent; /* 100% transparent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-img-canvas-container canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    outline: none;
+}
+
+/* Swarm Wrapper Style (Light Theme Matching Original Profile Style) */
+.profile-img-wrapper.swarm-wrapper {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    transition: all 0.3s ease !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+}
+
+.profile-img-wrapper.swarm-wrapper:hover {
+    transform: scale(1.05);
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Dynamic Halo Behind Swarm (Original Soft Indigo Style) */
+.profile-container.swarm-active .profile-bg {
+    display: none !important;
+}
+
 /* Blog Styles */
 .blog-card-custom {
     border-radius: 24px;
