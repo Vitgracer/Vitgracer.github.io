@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description"
+        content="How I stopped hating desk breaks and built Unchairted: a web camera game using MediaPipe for back health." />
+    <meta name="author" content="Vitaly" />
+    <title>Web Game for Back Health | One More Epoch</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <!-- Custom Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="../css/post.css" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg glass-nav py-3 sticky-top">
+            <div class="container px-3 px-lg-5">
+                <a class="navbar-brand" href="../index.html"><span class="fw-bolder text-gradient">One More
+                        Epoch</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../resume.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../projects.html">Projects</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Post Header -->
+        <header class="post-header">
+            <div class="container px-3 px-lg-5 text-center">
+                <h1 class="display-3 fw-bolder mb-3">🧘 How I Healed My Back With Computer Vision</h1>
+                <p class="lead fw-light text-muted">Gamifying physical therapy with Pose Estimation.</p>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <section class="pb-5">
+            <div class="container px-3 px-lg-5">
+                <div class="row justify-content-center">
+                    <div class="col-xxl-10 post-container blog-post">
+                        <div class="mb-4">
+
+                            <img src="../assets/unchairted_logo.jpg" class="img-fluid rounded-4 mb-4"
+                                alt="Unchairted Logo">
+
+                            <p>Every developer goes through this. One fine morning, you try to roll out
+                                of bed and realize your lower back is making the exact same sound as an old wooden
+                                dresser being dragged across a concrete floor.</p>
+
+                            <p>I'm not hte youngest person in the world (apparently I am not ha ha ha), and work as a
+                                Computer Vision engineer, and my typical workday lasts anywhere from
+                                10 to 12 hours. I spend almost all of that time glued to a chair, adopting shapes and
+                                postures that directly contradict the laws of human anatomy. A couple of months ago, my
+                                spine staged a full-blown rebellion. It wasn't just a mild ache; it was a formal
+                                declaration of independence from my lower back.</p>
+
+                            <p>I tried to fix it the standard way. I downloaded one of those polite "Time to stretch!"
+                                mobile apps. You know what happens after three days? You start to harbor a deep, burning
+                                resentment toward those push notifications. They always trigger right in the middle of a
+                                complex debugging flow. You angrily tap "Remind me in 15 minutes" and keep sitting.
+                                Standard stretching routines felt like a chore—more boring than reviewing someone's
+                                undocumented pull request.</p>
+
+                            <p>So I thought: I'm a Computer Vision guy. Why not make my webcam track my movements and
+                                turn these boring stretches into something interactive?</p>
+
+                            <img src="../assets/body_controller.png" class="img-fluid rounded-4 mb-4"
+                                alt="Boring stretch reminders vs gaming">
+
+                            <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Attempt #1: The Mobile Trap</h3>
+                            <p>My first idea was to build a mobile app. The plan seemed simple: put your phone on the
+                                desk, let the front camera scan your body, you jump around in front of it, profit.</p>
+
+                            <p>But reality caught up quickly. First off, optimizing real-time neural network pose
+                                tracking on mobile browsers or apps is a nightmare. On average phones, the frame rate
+                                looked like a slide show from a family vacation. A reaction-based game running at 4 FPS
+                                is more likely to give you emotion sickness than a healthy workout. Second, testing code
+                                changes meant compiling, deploying, and building constantly. The initial excitement wore
+                                off, and the project ended up in the virtual drawer of "ideas to finish later."</p>
+
+                            <img src="../assets/mobile_pose.png" class="img-fluid rounded-4 mb-4 d-block mx-auto"
+                                alt="Mobile Pose Tracking Lag">
+
+
+                            <h3 style="margin-top: 2rem; margin-bottom: 1rem;">Attempt #2: Pure Web Magic</h3>
+                            <p>A few weeks later, with my back still complaining, I tried a different angle. Why
+                                complicate things with mobile builds when developers spend 99% of their time at a
+                                computer? Everyone has a browser and a webcam.</p>
+
+                            <p>I put together a simple stack: HTML, Vanilla JS, and pose
+                                tracking. Everything runs locally in the browser on your CPU or GPU. No external
+                                servers, no sending your video stream anywhere (privacy is non-negotiable — no one wants
+                                to send video of themselves jumping around in sweatpants to a third-party server).</p>
+
+                            <p>That's how <strong>Unchairted</strong> was born (a play on getting out of your chair).
+                            </p>
+
+                            <p>I came up with two simple but highly active modes:</p>
+
+                            <ol>
+                                <li>
+                                    <strong>Bubble Hunter</strong>
+                                    <p>Soap bubbles float across the screen, and you have to pop them with your hands.
+                                        It sounds simple until a giant red warning laser sweeps across the screen. To
+                                        dodge it and keep your points, you have to do a deep squat. After a few minutes,
+                                        you realize you've done a full set of squats and arm swings without even
+                                        thinking about it.</p>
+                                </li>
+
+                                <img src="../assets/gameplay_buble_hunter.gif"
+                                    class="img-fluid rounded-4 mb-4 d-block mx-auto" style="width: 50%;"
+                                    alt="Unchairted Gameplay Preview">
+
+                                <li>
+                                    <strong>Egg Catcher</strong>
+                                    <p>An homage to retro handheld games where you catch falling items. By bringing your
+                                        palms together, you control a virtual basket to catch eggs dropping from four
+                                        chutes. It trains your coordination and keeps your core moving.</p>
+                                </li>
+                            </ol>
+
+                            <img src="../assets/gameplay_egg_catcher.gif"
+                                    class="img-fluid rounded-4 mb-4 d-block mx-auto" style="width: 50%;"
+                                    alt="Unchairted Gameplay Preview">
+
+                            <h3 style="margin-top: 2rem; margin-bottom: 1rem;">The Takeaway</h3>
+                            <p>Gamification actually works. When you have a score counter, sound effects, and a
+                                countdown timer, your brain stops treating it as "boring health maintenance" and starts
+                                treating it as a quick challenge. A five-minute break turns into a high-energy movement
+                                session.</p>
+
+                            <p>If you notice your neck jutting forward like a turtle and your back slouching, don't wait
+                                for your spine to lock up. Open a tab, step back from your desk, and get moving. Your
+                                back will thank you (eventually).</p>
+
+                            <!-- Call to Action -->
+                            <div class="my-5 p-4 rounded-4 text-center" style="background: linear-gradient(135deg, rgba(30, 48, 243, 0.05) 0%, rgba(226, 30, 128, 0.05) 100%); border: 1px solid rgba(30, 48, 243, 0.1);">
+                                <h4 class="fw-bold mb-3">🎮 Try Unchairted Live!</h4>
+                                <p class="mb-4 text-muted small">Ready to test your posture and pop some bubbles? Try the game directly in your browser or explore the source code.</p>
+                                <div class="d-flex flex-wrap justify-content-center gap-3">
+                                    <a href="https://vitgracer.github.io/Unchairted/" target="_blank" class="btn btn-primary px-4 py-2 rounded-3 shadow-sm" style="background: linear-gradient(45deg, #1e30f3, #e21e80); border: none; font-weight: 600;">
+                                        <i class="bi bi-play-fill me-2"></i>Play Game Live
+                                    </a>
+                                    <a href="https://github.com/Vitgracer/Unchairted" target="_blank" class="btn btn-outline-dark px-4 py-2 rounded-3" style="font-weight: 600;">
+                                        <i class="bi bi-github me-2"></i>View on GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Post Footer -->
+                        <div class="d-flex justify-content-between text-muted">
+                            <span>Published on June 2, 2026</span>
+                            <span>Author: Vitaly</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-4 text-center bg-white border-top">
+        <div class="container px-3 px-lg-5">
+            <div class="small text-muted">Copyright &copy; Vitalii • One More Epoch 2026</div>
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Prism.js CSS + JS for code highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+</body>
+
+</html>
